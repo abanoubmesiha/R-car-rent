@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../logo.svg';
+import Logo from '../logo.svg';
 
 
 const { Sider } = Layout;

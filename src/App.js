@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Index from "./layout/components";
-// import 'antd/dist/antd.css';
+import Index from "./Layouts";
 import './App.css';
 
 function App() {
