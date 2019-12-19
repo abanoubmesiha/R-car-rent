@@ -22,7 +22,6 @@ import {
   } from 'antd';
   const { Content } = Layout;
   const { Option } = Select;
-  const { Title } = Typography;
 
   class Demo extends React.Component {
     handleSubmit = e => {
@@ -109,15 +108,13 @@ import {
                 
               </Col>
             </Row>
-          <Form.Item style={{margin:'10px'}}
-          wrapperCol={{ span: 1,offset:15}}
-          >
+          </Content>
+        </Form>
+          <Form.Item style={{margin:'10px'}}>
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
           </Form.Item>
-          </Content>
-        </Form>
       </React.Fragment>
         );
     }
