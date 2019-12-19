@@ -17,7 +17,8 @@ import EmployeesR from './Reports/EmployeesR'
 import Account from './Settings/Account'
 import SMTP from './Settings/SMTP'
 import Basics from './Partials/_Basics'
+import Location from './Partials/_Location'
 export {Dashboard,Invoices,NewInv,Contracts,NewCon,Clients,
         NewCls,Services,NewCar,Employees,NewEmp,PurchasesR,
         ContractsR,ClientsR,ServicesR,EmployeesR,Account,SMTP,
-        Basics,}
+        Basics,Location}

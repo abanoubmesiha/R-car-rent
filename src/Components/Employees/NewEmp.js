@@ -1,27 +1,14 @@
 import React from 'react'
-import {Basics} from '../ComponentsImport'
+import {Basics,Location} from '../ComponentsImport'
 import {
-    Typography,
     Form,
     Layout,
     Breadcrumb,
-    Select,
-    InputNumber,
-    NumericInput,
-    Input,
-    Switch,
-    Radio,
-    Slider,
     Button,
-    Upload,
-    Icon,
-    Rate,
-    Checkbox,
     Row,
     Col,
   } from 'antd';
   const { Content } = Layout;
-  const { Option } = Select;
 
   class Demo extends React.Component {
     handleSubmit = e => {
@@ -44,8 +31,8 @@ import {
     render() {
       const { getFieldDecorator } = this.props.form;
       const formItemLayout = {
-        labelCol: {xs: {span: 3},sm: {span: 12},md: {span: 10},lg: {span: 8}},
-        wrapperCol: {xs: {span: 3},sm: {span: 12},md: {span: 14},lg: {span: 16}},
+        labelCol: {xs: {span: 3},sm: {span: 10},md: {span: 10},lg: {span: 8}},
+        wrapperCol: {xs: {span: 3},sm: {span: 14},md: {span: 14},lg: {span: 16}},
         labelAlign: 'left',
       };
       const styles = {
@@ -65,10 +52,12 @@ import {
               <Col sm={24} md={12}>
                 <Basics getFieldDecorator={getFieldDecorator}/>
               </Col>
+              <Col sm={24} md={12}>
+                <Location getFieldDecorator={getFieldDecorator}/>
+              </Col>
             </Row>
             <Row gutter={[8, 8]}>
               <Col sm={24} md={12}>
-                
               </Col>
             </Row>
           </Content>
