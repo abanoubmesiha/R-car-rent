@@ -76,7 +76,7 @@ import {
                     </Select>,
                   )}
                 </Form.Item>
-                <Form.Item style={styles.FormI} label="Employee Name">
+                <Form.Item style={styles.FormI} label="Notes">
                   {getFieldDecorator('EmpName', {})(<TextArea rows={4} placeholder="Notes ........ " />)}
                 </Form.Item>
               </Col>
