@@ -1,5 +1,4 @@
 import React from 'react'
-import {Basics} from '../ComponentsImport'
 import {
     Typography,
     Form,
@@ -20,10 +19,11 @@ import {
     Row,
     Col,
   } from 'antd';
-  const { Content } = Layout;
-  const { Option } = Select;
 
-  class Demo extends React.Component {
+const { Content } = Layout;
+const { Option } = Select;
+
+class Basics extends React.Component {
     handleSubmit = e => {
       e.preventDefault();
       this.props.form.validateFields((err, values) => {
@@ -42,27 +42,19 @@ import {
     };
   
     render() {
-      const { getFieldDecorator } = this.props.form;
-      const formItemLayout = {
-        labelCol: {xs: {span: 3},sm: {span: 12},md: {span: 8}},
-        wrapperCol: {xs: {span: 3},sm: {span: 12},md: {span: 16}},
-        labelAlign: 'left',
-      };
+      const { getFieldDecorator } = this.props;
+    //   const formItemLayout = {
+    //     labelCol: {xs: {span: 3},sm: {span: 12},md: {span: 8}},
+    //     wrapperCol: {xs: {span: 3},sm: {span: 12},md: {span: 16}},
+    //     labelAlign: 'left',
+    //   };
       const styles = {
         inputN:{ width: '100%' },
         FormI:{marginBottom: 0},
       }
       return (
       <React.Fragment>
-          <Breadcrumb style={{ margin: '10px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
-        <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-          <Content style={{ background: '#fff',padding: '10px 10px'}}>
-            <Basics getFieldDecorator={getFieldDecorator}/>
-            {/* <Row gutter={[8, 8]}>
+            <Row gutter={[8, 8]}>
               <Col xs={24} sm={12}>
                 <Form.Item style={styles.FormI} label="Code">
                   {getFieldDecorator('Code', {
@@ -70,12 +62,12 @@ import {
                   })(<InputNumber placeholder="Type Code" style={styles.inputN} min={0} max={999}/>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Employee Name">
-                  {getFieldDecorator('input', {
+                  {getFieldDecorator('EmpName', {
                     rules: [{ required: true, message: 'Please type employee name!' }],
                   })(<Input placeholder="Type Employee Name" />)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="ID Type" hasFeedback>
-                  {getFieldDecorator('select', {
+                  {getFieldDecorator('IDType', {
                     rules: [{ required: true, message: 'Please select Id Type!' }],
                   })(
                     <Select placeholder="Please select Id Type">
@@ -107,19 +99,11 @@ import {
               <Col xs={24} sm={12}>
                 
               </Col>
-            </Row> */}
-          </Content>
-          <Form.Item style={{margin:'10px'}}>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
+            </Row>
       </React.Fragment>
         );
     }
   }
   
-  const NewEmp = Form.create({ name: 'validate_other' })(Demo);
-  export default NewEmp;
-
+//   const Basics = Form.create({ name: 'validate_other' })(Demo);
+  export default Basics;
