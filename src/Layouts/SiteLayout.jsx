@@ -23,24 +23,24 @@ class SiteLayout extends Component {
                         </Breadcrumb> */}
                         <div style={{ padding: 24, minHeight: 360 }}>
                             <Switch>
-                                <Route path="/dash" component={Dashboard}/>
-                                <Route path="/inv/all" component={Invoices}/>
-                                <Route path="/inv/nwinv" component={NewInv}/>
-                                <Route path="/con/all" component={Contracts}/>
-                                <Route path="/con/nwcon" component={NewCon}/>
-                                <Route path="/cls/all" component={Clients}/>
-                                <Route path="/cls/nwcls" component={NewCls}/>
-                                <Route path="/car/all" component={Services}/>
-                                <Route path="/car/nwcar" component={NewCar}/>
-                                <Route path="/emp/all" component={Employees}/>
-                                <Route path="/emp/nwemp" component={NewEmp}/>
-                                <Route path="/rpt/purs" component={PurchasesR}/>
-                                <Route path="/rpt/cons" component={ContractsR}/>
-                                <Route path="/rpt/clis" component={ClientsR}/>
-                                <Route path="/rpt/srvs" component={ServicesR}/>
-                                <Route path="/rpt/emps" component={EmployeesR}/>
-                                <Route path="/set/acc" component={Account}/>
-                                <Route path="/set/smtp" component={SMTP}/>
+                                <Route path="#/dash" component={Dashboard}/>
+                                <Route path="#/inv/all" component={Invoices}/>
+                                <Route path="#/inv/nwinv" component={NewInv}/>
+                                <Route path="#/con/all" component={Contracts}/>
+                                <Route path="#/con/nwcon" component={NewCon}/>
+                                <Route path="#/cls/all" component={Clients}/>
+                                <Route path="#/cls/nwcls" component={NewCls}/>
+                                <Route path="#/car/all" component={Services}/>
+                                <Route path="#/car/nwcar" component={NewCar}/>
+                                <Route path="#/emp/all" component={Employees}/>
+                                <Route path="#/emp/nwemp" component={NewEmp}/>
+                                <Route path="#/rpt/purs" component={PurchasesR}/>
+                                <Route path="#/rpt/cons" component={ContractsR}/>
+                                <Route path="#/rpt/clis" component={ClientsR}/>
+                                <Route path="#/rpt/srvs" component={ServicesR}/>
+                                <Route path="#/rpt/emps" component={EmployeesR}/>
+                                <Route path="#/set/acc" component={Account}/>
+                                <Route path="#/set/smtp" component={SMTP}/>
                             </Switch>
                         </div>
                     </Content>
