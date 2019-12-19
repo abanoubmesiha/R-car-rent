@@ -1,26 +1,13 @@
 import React from 'react'
 import {
     Form,
-    Select,
-    InputNumber,
     Input,
   } from 'antd';
 
-const { Option } = Select;
-
 class Basics extends React.Component {
-    handleSubmit = e => {
-      e.preventDefault();
-      this.props.form.validateFields((err, values) => {
-        if (!err) {
-          console.log('Received values of form: ', values);
-        }
-      });
-    };
     render() {
       const { getFieldDecorator } = this.props;
       const styles = {
-        inputN:{ width: '100%' },
         FormI:{marginBottom: 0},
       }
       return (
