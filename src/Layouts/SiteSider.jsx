@@ -21,7 +21,7 @@ class SiteSider extends Component {
 
     render() {
         return (
-            <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} >
+            <Sider  breakpoint="xs" collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} >
                 <div style={{width: "90px", height: "90px", position: "center"}}>
                     <img src={Logo} />
                 </div>

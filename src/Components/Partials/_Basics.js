@@ -32,7 +32,14 @@ class Basics extends React.Component {
         }
       });
     };
-  
+    // onChange = e => {
+    //     const { value } = e.target;
+    //     const reg = /[0-9]/g;
+    //     if ((!isNaN(value) && reg.test(value)) || value === '' || value === '-') {
+    //       this.props.onChange(value);
+    //     // console.log(reg.test(value));
+    //      }
+    //   };
     normFile = e => {
       console.log('Upload event:', e);
       if (Array.isArray(e)) {
@@ -54,11 +61,9 @@ class Basics extends React.Component {
       }
       return (
       <React.Fragment>
-            <Row gutter={[8, 8]}>
-              <Col xs={24} sm={12}>
                 <Form.Item style={styles.FormI} label="Code">
                   {getFieldDecorator('Code', {
-                    rules: [{ required: true, message: 'Please input Code!' }],
+                    rules: [{ required: true, message: 'Please input Code Number!' }],
                   })(<InputNumber placeholder="Type Code" style={styles.inputN} min={0} max={999}/>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Employee Name">
@@ -93,13 +98,6 @@ class Basics extends React.Component {
                     rules: [{ required: true, message: 'Please type Mobile Number!' }],
                   })(<InputNumber placeholder="Type Mobile" style={styles.inputN} max={99999999999999}/>)}
                 </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={[8, 8]}>
-              <Col xs={24} sm={12}>
-                
-              </Col>
-            </Row>
       </React.Fragment>
         );
     }

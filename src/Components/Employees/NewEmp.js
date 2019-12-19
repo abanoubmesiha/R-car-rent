@@ -44,8 +44,8 @@ import {
     render() {
       const { getFieldDecorator } = this.props.form;
       const formItemLayout = {
-        labelCol: {xs: {span: 3},sm: {span: 12},md: {span: 8}},
-        wrapperCol: {xs: {span: 3},sm: {span: 12},md: {span: 16}},
+        labelCol: {xs: {span: 3},sm: {span: 12},md: {span: 10},lg: {span: 8}},
+        wrapperCol: {xs: {span: 3},sm: {span: 12},md: {span: 14},lg: {span: 16}},
         labelAlign: 'left',
       };
       const styles = {
@@ -61,53 +61,16 @@ import {
         </Breadcrumb>
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
           <Content style={{ background: '#fff',padding: '10px 10px'}}>
-            <Basics getFieldDecorator={getFieldDecorator}/>
-            {/* <Row gutter={[8, 8]}>
-              <Col xs={24} sm={12}>
-                <Form.Item style={styles.FormI} label="Code">
-                  {getFieldDecorator('Code', {
-                    rules: [{ required: true, message: 'Please input Code!' }],
-                  })(<InputNumber placeholder="Type Code" style={styles.inputN} min={0} max={999}/>)}
-                </Form.Item>
-                <Form.Item style={styles.FormI} label="Employee Name">
-                  {getFieldDecorator('input', {
-                    rules: [{ required: true, message: 'Please type employee name!' }],
-                  })(<Input placeholder="Type Employee Name" />)}
-                </Form.Item>
-                <Form.Item style={styles.FormI} label="ID Type" hasFeedback>
-                  {getFieldDecorator('select', {
-                    rules: [{ required: true, message: 'Please select Id Type!' }],
-                  })(
-                    <Select placeholder="Please select Id Type">
-                      <Option value="it type 1">it type 1</Option>
-                      <Option value="it type 2">it type 2</Option>
-                      <Option value="it type 3">it type 3</Option>
-                      <Option value="it type 4">it type 4</Option>
-                    </Select>,
-                  )}
-                </Form.Item>
-                <Form.Item style={styles.FormI} label="ID Number">
-                  {getFieldDecorator('IDNum', {
-                    rules: [{ required: true, message: 'Please type Id Number!' }],
-                  })(<InputNumber placeholder="Type ID Number" style={styles.inputN}  max={99999999999999} />)}
-                </Form.Item>
-                <Form.Item style={styles.FormI} label="Phone">
-                  {getFieldDecorator('Phone', {
-                    rules: [{ required: true, message: 'Please type Phone Number!' }],
-                  })(<InputNumber placeholder="Type Phone" style={styles.inputN} max={99999999999999} />)}
-                </Form.Item>
-                <Form.Item style={styles.FormI} label="Mobile">
-                  {getFieldDecorator('Mobile', {
-                    rules: [{ required: true, message: 'Please type Mobile Number!' }],
-                  })(<InputNumber placeholder="Type Mobile" style={styles.inputN} max={99999999999999}/>)}
-                </Form.Item>
+            <Row gutter={[8, 8]}>
+              <Col sm={24} md={12}>
+                <Basics getFieldDecorator={getFieldDecorator}/>
               </Col>
             </Row>
             <Row gutter={[8, 8]}>
-              <Col xs={24} sm={12}>
+              <Col sm={24} md={12}>
                 
               </Col>
-            </Row> */}
+            </Row>
           </Content>
           <Form.Item style={{margin:'10px'}}>
             <Button type="primary" htmlType="submit">
