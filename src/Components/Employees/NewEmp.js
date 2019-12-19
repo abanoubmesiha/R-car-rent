@@ -46,8 +46,9 @@ import {
       console.log(this.props.form);
       const { getFieldDecorator } = this.props.form;
       const formItemLayout = {
-        labelCol: { span: 6 },
-        wrapperCol: { span: 14 },
+        labelCol: { span: 8 },
+        wrapperCol: { span: 16 },
+        labelAlign: 'left',
       };
       const styles = {
         inputN:{ width: '100%' },
@@ -63,22 +64,19 @@ import {
       );
       return (
       <React.Fragment>
-          <Breadcrumb style={{ margin: '16px 0' }}>
+          <Breadcrumb style={{ margin: '10px 0' }}>
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item>List</Breadcrumb.Item>
           <Breadcrumb.Item>App</Breadcrumb.Item>
         </Breadcrumb>
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-          <Content style={{ background: '#fff',padding: '0 50px'}}>
+          <Content style={{ background: '#fff',padding: '10px 10px'}}>
             <Row gutter={[8, 8]}>
               <Col span={12}>
-                {/* <Form.Item style={styles.FormI} label="Code">
-                  {getFieldDecorator('input-number', { initialValue: 1 })(<NumericInput style={styles.inputN} placeholder="Type Employee Name" />)}
-                </Form.Item> */}
                 <Form.Item style={styles.FormI} label="Code">
                   {getFieldDecorator('Code', {
                     rules: [{ required: true, message: 'Please input Code!' }],
-                  })(<InputNumber placeholder="Type Code" style={styles.inputN} max={999}/>)}
+                  })(<InputNumber placeholder="Type Code" style={styles.inputN} min={0} max={999}/>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Employee Name">
                   {getFieldDecorator('input', {
@@ -112,10 +110,6 @@ import {
                     rules: [{ required: true, message: 'Please type Mobile Number!' }],
                   })(<Input placeholder="Type Mobile" style={styles.inputN} max={99999999999999}/>)}
                 </Form.Item>
-                {/* <Form.Item label="Plain Text">
-                  <span className="ant-form-text">China</span>
-                </Form.Item> */}
-                
               </Col>
             </Row>
             <Row gutter={[8, 8]}>
@@ -124,9 +118,7 @@ import {
               </Col>
             </Row>
           </Content>
-          
-  
-          <Form.Item label="Select[multiple]">
+          {/* <Form.Item label="Select[multiple]">
             {getFieldDecorator('select-multiple', {
               rules: [
                 { required: true, message: 'Please select your favourite colors!', type: 'array' },
@@ -139,13 +131,6 @@ import {
               </Select>,
             )}
           </Form.Item>
-  
-          
-  
-          {/* <Form.Item label="Switch">
-            {getFieldDecorator('switch', { valuePropName: 'checked' })(<Switch />)}
-          </Form.Item> */}
-  
           <Form.Item label="Slider">
             {getFieldDecorator('slider')(
               <Slider
@@ -207,7 +192,7 @@ import {
                 </Row>
               </Checkbox.Group>,
             )}
-          </Form.Item>
+          </Form.Item> */}
   
           {/* <Form.Item label="Rate">
             {getFieldDecorator('rate', {
