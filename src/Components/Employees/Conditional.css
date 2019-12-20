@@ -1,0 +1,14 @@
+.TTT {
+    display: block;
+}
+.CCC {
+    display: none;
+}
+@media (max-width: 950px) {
+    .TTT {
+        display: none;
+    }
+    .CCC {
+        display: inline;
+    }
+  }

@@ -3,7 +3,9 @@ import React from 'react'
 
 import { Table, Input, Button, Icon } from 'antd';
 import Highlighter from 'react-highlight-words';
+import './Conditional.css'
 import data from './data';
+import Cards from './Cards';
 
 
 class Employees extends React.Component {
@@ -149,7 +151,12 @@ class Employees extends React.Component {
         }
       ];
     
-    return <Table pagination = {{ position: 'both' }} bordered columns={columns} dataSource={data} />;
+    return (
+        <React.Fragment>
+            <Cards />
+            <Table className="TTT" pagination = {{ position: 'both' }} bordered columns={columns} dataSource={data} />
+        </React.Fragment>
+    )
   }
 }
 
