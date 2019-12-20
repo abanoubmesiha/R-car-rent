@@ -62,26 +62,15 @@ import {
                 <Location getFieldDecorator={getFieldDecorator}/>
               </Col>
             </Row>
+            {/* <Row gutter={[24, 24]}><Col sm={24} md={12}><div><h1>a</h1></div></Col></Row> */}
             <Row gutter={[24, 24]}>
               <Col sm={24} md={12}>
-              <Form.Item style={styles.FormI} label="Language" hasFeedback>
-                  {getFieldDecorator('Language', {})(
-                    <Select placeholder="Please select Language">
-                      <Option value="Arabic">Arabic</Option>
-                      <Option value="English">English</Option>
-                      <Option value="French">French</Option>
-                      <Option value="German">German</Option>
-                      <Option value="Italian">Italian</Option>
-                      <Option value="Spanish">Spanish</Option>
-                    </Select>,
-                  )}
-                </Form.Item>
                 <Form.Item style={styles.FormI} label="Notes">
                   {getFieldDecorator('EmpName', {})(<TextArea rows={4} placeholder="Notes ........ " />)}
                 </Form.Item>
               </Col>
               <Col sm={24} md={12}>
-              <Form.Item style={styles.FormI} label="Job" hasFeedback>
+                <Form.Item style={styles.FormI} label="Job" hasFeedback>
                   {getFieldDecorator('Job', {})(
                     <Select placeholder="Please select Job">
                       <Option value="Driver">Driver</Option>
@@ -90,7 +79,7 @@ import {
                     </Select>,
                   )}
                 </Form.Item>
-                <Form.Item label="Employee Status">
+                <Form.Item style={styles.FormI} label="Employee Status">
                   {getFieldDecorator('radio-button')(
                     <Radio.Group>
                       <Radio.Button value="Emp">Employed</Radio.Button>
@@ -98,7 +87,7 @@ import {
                     </Radio.Group>,
                   )}
                 </Form.Item>
-                <Form.Item label="Upload Photo">
+                <Form.Item style={styles.FormI} label="Upload Photo">
                   {getFieldDecorator('upload', {
                     valuePropName: 'fileList',
                     getValueFromEvent: this.normFile,

@@ -54,6 +54,20 @@ class Basics extends React.Component {
                     rules: [{ required: true, message: 'Please type Mobile Number!' }],
                   })(<InputNumber placeholder="Type Mobile" style={styles.inputN} max={99999999999999}/>)}
                 </Form.Item>
+                <Form.Item style={styles.FormI} label="E-mail">
+                  {getFieldDecorator('email', {
+                    rules: [
+                      {
+                        type: 'email',
+                        message: 'The input is not valid E-mail!',
+                      },
+                      {
+                        required: true,
+                        message: 'Please input your E-mail!',
+                      },
+                    ],
+                  })(<Input placeholder="Type E-Mail" />)}
+                </Form.Item>
       </React.Fragment>
         );
     }

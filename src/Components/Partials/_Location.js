@@ -2,7 +2,10 @@ import React from 'react'
 import {
     Form,
     Input,
+    Select,
   } from 'antd';
+
+  const { Option } = Select;
 
 class Basics extends React.Component {
     render() {
@@ -33,6 +36,18 @@ class Basics extends React.Component {
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Adress Line 2">
                   {getFieldDecorator('AdressLine2', {})(<Input placeholder="Type Adress Line 2" />)}
+                </Form.Item>
+                <Form.Item style={styles.FormI} label="Language" hasFeedback>
+                  {getFieldDecorator('Language', {})(
+                    <Select placeholder="Please select Language">
+                      <Option value="Arabic">Arabic</Option>
+                      <Option value="English">English</Option>
+                      <Option value="French">French</Option>
+                      <Option value="German">German</Option>
+                      <Option value="Italian">Italian</Option>
+                      <Option value="Spanish">Spanish</Option>
+                    </Select>,
+                  )}
                 </Form.Item>
                 
       </React.Fragment>
