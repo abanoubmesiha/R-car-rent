@@ -2,31 +2,54 @@ import React from 'react'
 import data from './data';
 import './Conditional.css'
 
-import { Card, Icon, Avatar } from 'antd';
+import { Card, Icon, Avatar,Pagination } from 'antd';
 
 const { Meta } = Card;
 
 class Cards extends React.Component {
-  
-
- 
-
+    constructor(props) {
+        super(props);
+        this.state = {
+          minValue: 0,
+          maxValue: 9
+        };
+      }
+      handleChange = value => {
+        if (value <= 1) {
+          this.setState({
+            minValue: 0,
+            maxValue: 9
+          });
+        } else {
+          this.setState({
+            minValue: this.state.maxValue,
+            maxValue: value * 9
+          });
+        }
+      };
   render() {
       return (
-          <React.Fragment>
-        {data.map((card)=>{
-          const {Code,Job,Image,Name,Country,Phone} = card
-            return (<Card className="CCC" title={`${Code} - ${Job}`}
-                            key={Code}
-                            size={'small'}
-                            style={{ margin: 5 }}
-                            actions={[<Icon type="edit" key="edit" />,
-                                        <Icon type="delete" />]}>
-                    <Meta avatar={<Avatar src={Image} />}
-                        title={`${Name}`}
-                        description={`${Country} - ${Phone}`} />
-            </Card>)
+        <React.Fragment>
+            <Pagination className="PPP" defaultCurrent={1} defaultPageSize={9}
+            onChange={this.handleChange}
+            total={data.length} showQuickJumper />
+                {data &&
+                data.length > 0 &&
+                data.slice(this.state.minValue, this.state.maxValue).map((card)=>{
+                const {Code,Job,Image,Name,Country,Phone} = card
+                    return (
+                    <Card className="CCC" title={`${Code} - ${Job}`}
+                                    key={Code}
+                                    size={'small'}
+                                    style={{ margin: 5 }}
+                                    actions={[<Icon type="edit" key="edit" />,
+                                                <Icon type="delete" />]}>
+                            <Meta avatar={<Avatar src={Image} />}
+                                title={`${Name}`}
+                                description={`${Country} - ${Phone}`} />
+                    </Card>)
         })}
+        
       </React.Fragment>
     );
   }

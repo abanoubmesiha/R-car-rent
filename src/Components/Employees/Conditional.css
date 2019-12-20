@@ -4,11 +4,17 @@
 .CCC {
     display: none;
 }
+.PPP {
+    display: none;
+}
 @media (max-width: 950px) {
     .TTT {
         display: none;
     }
     .CCC {
+        display: block;
+    }
+    .PPP {
         display: block;
     }
   }
