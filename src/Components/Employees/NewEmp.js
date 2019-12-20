@@ -1,20 +1,8 @@
 import React from 'react'
-import {Basics,Location} from '../ComponentsImport'
-import {
-    Form,
-    Layout,
-    Select,
-    Radio,
-    Input,
-    Breadcrumb,
-    Button,
-    Upload,
-    Icon,
-    Row,
-    Col,
+import {Basics,Location,Constants} from '../ComponentsImporter'
+import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
   } from 'antd';
 
-  const { Content } = Layout;
   const { Option } = Select;
   const { TextArea } = Input;
 
@@ -36,25 +24,12 @@ import {
     };
     render() {
       const { getFieldDecorator } = this.props.form;
-      const formItemLayout = {
-        labelCol: {xs: {span: 3},sm: {span: 10},md: {span: 10},lg: {span: 8}},
-        wrapperCol: {xs: {span: 3},sm: {span: 14},md: {span: 14},lg: {span: 16}},
-        labelAlign: 'left',
-      };
-      const styles = {
-        inputN:{ width: '100%' },
-        FormI:{marginBottom: 0},
-      }
+      const {formItemLayout,styles} = Constants;
+
       return (
       <React.Fragment>
-          <Breadcrumb style={{ margin: '10px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-          <Content style={{ background: '#fff',padding: '10px 10px'}}>
-            <Row gutter={[24, 24]}>
+            <Row {...styles.Row}>
               <Col sm={24} md={12}>
                 <Basics getFieldDecorator={getFieldDecorator}/>
               </Col>
@@ -62,11 +37,12 @@ import {
                 <Location getFieldDecorator={getFieldDecorator}/>
               </Col>
             </Row>
-            {/* <Row gutter={[24, 24]}><Col sm={24} md={12}><div><h1>a</h1></div></Col></Row> */}
-            <Row gutter={[24, 24]}>
+            <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
+
+            <Row  {...styles.Row}>
               <Col sm={24} md={12}>
                 <Form.Item style={styles.FormI} label="Notes">
-                  {getFieldDecorator('EmpName', {})(<TextArea rows={4} placeholder="Notes ........ " />)}
+                  {getFieldDecorator('Notes', {})(<TextArea rows={4} placeholder="Notes ........ " />)}
                 </Form.Item>
               </Col>
               <Col sm={24} md={12}>
@@ -101,7 +77,6 @@ import {
                 </Form.Item>
               </Col>
             </Row>
-          </Content>
           <Form.Item style={{margin:'10px'}}>
             <Button type="primary" htmlType="submit">
               Submit

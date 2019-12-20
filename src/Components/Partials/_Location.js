@@ -5,14 +5,15 @@ import {
     Select,
   } from 'antd';
 
-  const { Option } = Select;
+import {Constants} from '../ComponentsImporter'
+
+const { Option } = Select;
 
 class Basics extends React.Component {
     render() {
       const { getFieldDecorator } = this.props;
-      const styles = {
-        FormI:{marginBottom: 0},
-      }
+      const {styles}=Constants;
+
       return (
       <React.Fragment>
                 <Form.Item style={styles.FormI} label="Country">

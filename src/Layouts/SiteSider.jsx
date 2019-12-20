@@ -100,23 +100,23 @@ class SiteSider extends Component {
                     </SubMenu>
 
                     <SubMenu
-                        key="subServices"
+                        key="subCars"
                         title={
                             <span>
                                     <Icon type="car" />
-                                    <span>Services</span>
+                                    <span>Cars</span>
                                 </span>
                         }>
                         <Menu.Item key="8">
                             <Link to="/car/all">
                                 <Icon type="car" />
-                                <span>Manage Services</span>
+                                <span>Manage Cars</span>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="9">
                             <Link to="/car/nwcar">
                                 <Icon type="plus" />
-                                <span>Add New Service</span>
+                                <span>Add New Car</span>
                             </Link>
                         </Menu.Item>
                     </SubMenu>

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function NewCar() {
+export default function Cars() {
     return (
         <React.Fragment>
-            <h1>NewCar</h1>
+            <h1>Cars</h1>
         </React.Fragment>
     )
 }

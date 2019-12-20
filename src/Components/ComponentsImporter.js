@@ -3,11 +3,11 @@ import Invoices from './Invoices'
 import NewInv from './Invoices/NewInv'
 import Contracts from './Contracts'
 import NewCon from './Contracts/NewCon'
-import Clients from './Clients/'
+import Clients from './Clients'
 import NewCls from './Clients/NewCls'
-import Services from './Services/'
-import NewCar from './Services/NewCar'
-import Employees from './Employees/'
+import Cars from './Cars'
+import NewCar from './Cars/NewCar'
+import Employees from './Employees'
 import NewEmp from './Employees/NewEmp'
 import PurchasesR from './Reports/PurchasesR'
 import ContractsR from './Reports/ContractsR'
@@ -18,7 +18,9 @@ import Account from './Settings/Account'
 import SMTP from './Settings/SMTP'
 import Basics from './Partials/_Basics'
 import Location from './Partials/_Location'
+import Constants from './ConstantsImporer'
+
 export {Dashboard,Invoices,NewInv,Contracts,NewCon,Clients,
-        NewCls,Services,NewCar,Employees,NewEmp,PurchasesR,
+        NewCls,Cars,NewCar,Employees,NewEmp,PurchasesR,
         ContractsR,ClientsR,ServicesR,EmployeesR,Account,SMTP,
-        Basics,Location}
+        Basics,Location,Constants}

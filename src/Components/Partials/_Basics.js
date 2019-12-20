@@ -5,22 +5,21 @@ import {
     InputNumber,
     Input,
   } from 'antd';
+import {Constants} from '../ComponentsImporter'
 
 const { Option } = Select;
 
 class Basics extends React.Component {
     render() {
       const { getFieldDecorator } = this.props;
-      const styles = {
-        inputN:{ width: '100%' },
-        FormI:{marginBottom: 0},
-      }
+      const {styles}=Constants;
+
       return (
       <React.Fragment>
                 <Form.Item style={styles.FormI} label="Code">
                   {getFieldDecorator('Code', {
                     rules: [{ required: true, message: 'Please input Code Number!' }],
-                  })(<InputNumber placeholder="Type Code" style={styles.inputN} min={0} max={999}/>)}
+                  })(<InputNumber placeholder="Type Code" style={styles.Input} min={0} max={999}/>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Employee Name">
                   {getFieldDecorator('EmpName', {
@@ -42,17 +41,17 @@ class Basics extends React.Component {
                 <Form.Item style={styles.FormI} label="ID Number">
                   {getFieldDecorator('IDNum', {
                     rules: [{ required: true, message: 'Please type Id Number!' }],
-                  })(<InputNumber placeholder="Type ID Number" style={styles.inputN}  max={99999999999999} />)}
+                  })(<InputNumber placeholder="Type ID Number" style={styles.Input}  max={99999999999999} />)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Phone">
                   {getFieldDecorator('Phone', {
                     rules: [{ required: true, message: 'Please type Phone Number!' }],
-                  })(<InputNumber placeholder="Type Phone" style={styles.inputN} max={99999999999999} />)}
+                  })(<InputNumber placeholder="Type Phone" style={styles.Input} max={99999999999999} />)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Mobile">
                   {getFieldDecorator('Mobile', {
                     rules: [{ required: true, message: 'Please type Mobile Number!' }],
-                  })(<InputNumber placeholder="Type Mobile" style={styles.inputN} max={99999999999999}/>)}
+                  })(<InputNumber placeholder="Type Mobile" style={styles.Input} max={99999999999999}/>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="E-mail">
                   {getFieldDecorator('email', {
