@@ -13,9 +13,9 @@ class Employees extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-    data:data,
-    searchText: '',
-    searchedColumn: '',
+          data:data,
+          searchText: '',
+          searchedColumn: '',
   };
     this.HSearch=this.HSearch.bind(this)
   }
@@ -107,6 +107,8 @@ class Employees extends React.Component {
             this.setState({
               data: data
             });
+            document.getElementById('SF').value='XXX';
+            console.log(document.getElementById('SF').value)
       }
   render() {
     const {styles} = Constants;
@@ -185,26 +187,26 @@ class Employees extends React.Component {
         <React.Fragment>
           <Row>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
-              <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input id="SF"style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input style={styles.SInput} placeholder="Name" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input id="SF"style={styles.SInput} placeholder="Name" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input style={styles.SInput} placeholder="Phone" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input id="SF"style={styles.SInput} placeholder="Phone" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input style={styles.SInput} placeholder="Country" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input id="SF"style={styles.SInput} placeholder="Country" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input style={styles.SInput} placeholder="Job" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input id="SF"style={styles.SInput} placeholder="Job" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
           </Row>
             <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
             <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
 
           {/* <Button onClick={this.setAgeSort}>Sort age</Button> */}
-            <Cards />
+            <Cards data={this.state.data}/>
             <Table className="TTT" pagination bordered columns={columns} dataSource={this.state.data} />
         </React.Fragment>
     )

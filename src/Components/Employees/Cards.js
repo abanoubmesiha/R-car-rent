@@ -1,5 +1,4 @@
 import React from 'react'
-import data from './data';
 import './Conditional.css'
 
 import { Card, Icon, Avatar,Pagination } from 'antd';
@@ -27,9 +26,10 @@ class Cards extends React.Component {
           });
         }
       };
-  render() {
-      return (
-        <React.Fragment>
+      render() {
+        const {data} = this.props
+        return (
+          <React.Fragment>
             
                 {data &&
                 data.length > 0 &&
