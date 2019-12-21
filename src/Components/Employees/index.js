@@ -17,35 +17,23 @@ class Employees extends React.Component {
           searchText: '',
           searchedColumn: '',
   };
-    this.HSearch=this.HSearch.bind(this)
   }
-  
-
   getColumnSearchProps = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
       <div style={{ padding: 8 }}>
-        <Input
-          ref={node => {
-            this.searchInput = node;
-          }}
+        <Input ref={node => {
+            this.searchInput = node;}}
           placeholder={`Search ${dataIndex}`}
           value={selectedKeys[0]}
           onChange={e => setSelectedKeys(e.target.value ? [e.target.value] : [])}
           onPressEnter={() => this.handleSearch(selectedKeys, confirm, dataIndex)}
-          style={{ width: 188, marginBottom: 8, display: 'block' }}
-        />
-        <Button
-          type="primary"
+          style={{ width: 188, marginBottom: 8, display: 'block' }}/>
+        <Button type="primary"
           onClick={() => this.handleSearch(selectedKeys, confirm, dataIndex)}
-          icon="search"
-          size="small"
-          style={{ width: 90, marginRight: 8 }}
-        >
-          Search
-        </Button>
+          icon="search" size="small"
+          style={{ width: 90, marginRight: 8 }}>Search</Button>
         <Button onClick={() => this.handleReset(clearFilters)} size="small" style={{ width: 90 }}>
-          Reset
-        </Button>
+          Reset</Button>
       </div>
     ),
     filterIcon: filtered => (
@@ -63,16 +51,10 @@ class Employees extends React.Component {
     },
     render: text =>
       this.state.searchedColumn === dataIndex ? (
-        <Highlighter
-          highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
+        <Highlighter highlightStyle={{ backgroundColor: '#ffc069', padding: 0 }}
           searchWords={[this.state.searchText]}
-          autoEscape
-          textToHighlight={text.toString()}
-        />
-      ) : (
-        text
-      ),
-  });
+          autoEscape textToHighlight={text.toString()} />
+      ) : ( text ),});
 
   handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
@@ -81,12 +63,10 @@ class Employees extends React.Component {
       searchedColumn: dataIndex,
     });
     };
-
   handleReset = clearFilters => {
     clearFilters();
     this.setState({ searchText: '' });
   };
-  
       HSearch(e){
         let {value,placeholder} = e.target;
         const filteredData = this.state.data.filter(( emp ) =>{
@@ -107,12 +87,9 @@ class Employees extends React.Component {
             this.setState({
               data: data
             });
-            document.getElementById('SF').value='XXX';
-            console.log(document.getElementById('SF').value)
       }
   render() {
     const {styles} = Constants;
-
     const columns = [
         {
           title: 'Code',
@@ -135,7 +112,7 @@ class Employees extends React.Component {
           dataIndex: 'Country',
           key: 'Country',
           align:'center',
-          width: '10%',
+          width: '16%',
           ...this.getColumnSearchProps('Country'),
         },
         {
@@ -151,7 +128,7 @@ class Employees extends React.Component {
           dataIndex: 'Phone',
           key: 'Phone',
           align:'center',
-          width: '12.5%',
+          width: '14.5%',
           ...this.getColumnSearchProps('Phone'),
         },
         {
@@ -160,52 +137,48 @@ class Employees extends React.Component {
           key: 'Image',
           align:'center',
           width: '7.5%',
-          ...this.getColumnSearchProps('Image'),
           render:  (url) => <img width={50} height={50} src={url} />
         },
         {
-            title: 'Edit',
+            title: 'Setting',
             dataIndex: 'Edit',
+            colSpan:2,
             key: 'Edit',
             align:'center',
-            width: '5%',
-            ...this.getColumnSearchProps('Edit'),
+            width: '1%',
             render:  () => <Icon type="form" />
         },
         {
             title: 'Del',
             dataIndex: 'Del',
+            colSpan:0,
             key: 'Del',
             align:'center',
-            width: '5%',
-            ...this.getColumnSearchProps('Del'),
+            width: '1%',
             render:  () => <Icon type="delete" />
         }
       ];
-      
     return (
         <React.Fragment>
           <Row>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
-              <Input id="SF"style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input id="SF"style={styles.SInput} placeholder="Name" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input style={styles.SInput} placeholder="Name" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input id="SF"style={styles.SInput} placeholder="Phone" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input style={styles.SInput} placeholder="Phone" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input id="SF"style={styles.SInput} placeholder="Country" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input style={styles.SInput} placeholder="Country" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input id="SF"style={styles.SInput} placeholder="Job" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input style={styles.SInput} placeholder="Job" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
           </Row>
             <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
             <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
-
-          {/* <Button onClick={this.setAgeSort}>Sort age</Button> */}
             <Cards data={this.state.data}/>
             <Table className="TTT" pagination bordered columns={columns} dataSource={this.state.data} />
         </React.Fragment>
