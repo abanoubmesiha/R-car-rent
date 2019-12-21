@@ -30,9 +30,7 @@ class Cards extends React.Component {
   render() {
       return (
         <React.Fragment>
-            <Pagination className="PPP" defaultCurrent={1} defaultPageSize={9}
-            onChange={this.handleChange}
-            total={data.length} showQuickJumper />
+            
                 {data &&
                 data.length > 0 &&
                 data.slice(this.state.minValue, this.state.maxValue).map((card)=>{
@@ -49,7 +47,9 @@ class Cards extends React.Component {
                                 description={`${Country} - ${Phone}`} />
                     </Card>)
         })}
-        
+        <Pagination className="PPP" defaultCurrent={1} defaultPageSize={9}
+            onChange={this.handleChange}
+            total={data.length} showQuickJumper />
       </React.Fragment>
     );
   }

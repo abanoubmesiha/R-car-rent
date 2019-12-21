@@ -1,18 +1,25 @@
 
 import React from 'react'
 
-import { Table, Input, Button, Icon } from 'antd';
+import { Table, Input, Button, Icon,Row,Col } from 'antd';
 import Highlighter from 'react-highlight-words';
 import './Conditional.css'
 import data from './data';
+import {Constants} from '../ComponentsImporter'
 import Cards from './Cards';
 
 
 class Employees extends React.Component {
-  state = {
+  constructor(props){
+    super(props);
+    this.state = {
+    data:data,
     searchText: '',
     searchedColumn: '',
   };
+    this.HSearch=this.HSearch.bind(this)
+  }
+  
 
   getColumnSearchProps = dataIndex => ({
     filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
@@ -73,14 +80,37 @@ class Employees extends React.Component {
       searchText: selectedKeys[0],
       searchedColumn: dataIndex,
     });
-  };
+    };
 
   handleReset = clearFilters => {
     clearFilters();
     this.setState({ searchText: '' });
   };
-
+  
+      HSearch(e){
+        let {value,placeholder} = e.target;
+        const filteredData = this.state.data.filter(( emp ) =>{
+          if (placeholder == 'Phone' || placeholder == 'Code') {
+            value = value.toString();
+            emp[placeholder] = emp[placeholder].toString();
+          } else {
+            value = value.toLowerCase();
+            emp[placeholder] = emp[placeholder].toLowerCase();
+          }
+          return emp[placeholder].includes(value);
+        })
+        this.setState({
+              data: filteredData
+            });
+          }
+          HReset = () => {
+            this.setState({
+              data: data
+            });
+      }
   render() {
+    const {styles} = Constants;
+
     const columns = [
         {
           title: 'Code',
@@ -150,11 +180,32 @@ class Employees extends React.Component {
             render:  () => <Icon type="delete" />
         }
       ];
-    
+      
     return (
         <React.Fragment>
+          <Row>
+            <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
+              <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+            </Col>
+            <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
+              <Input style={styles.SInput} placeholder="Name" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+            </Col>
+            <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
+              <Input style={styles.SInput} placeholder="Phone" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+            </Col>
+            <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
+              <Input style={styles.SInput} placeholder="Country" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+            </Col>
+            <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
+              <Input style={styles.SInput} placeholder="Job" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+            </Col>
+          </Row>
+            <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
+            <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
+
+          {/* <Button onClick={this.setAgeSort}>Sort age</Button> */}
             <Cards />
-            <Table className="TTT" pagination = {{ position: 'both' }} bordered columns={columns} dataSource={data} />
+            <Table className="TTT" pagination bordered columns={columns} dataSource={this.state.data} />
         </React.Fragment>
     )
   }

@@ -7,7 +7,8 @@ const Constants = {
     styles : {
         Input:{ width: '100%' },
         FormI:{marginBottom: 0},
-        Row:{type:"flex",justify:"start",gutter:[24, 24]}
+        Row:{type:"flex",justify:"start",gutter:[24, 24]},
+        SInput:{padding: '5px'}
       }
 }
 export default Constants
