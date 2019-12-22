@@ -41,7 +41,7 @@ class Cards extends React.Component {
                                     size={'small'}
                                     style={{ margin: 5 }}
                                     actions={[<Icon type="edit" key="edit" />,
-                                                <Icon type="delete" />]}>
+                                                <Icon type="delete" theme="twoTone" />]}>
                             <Meta avatar={<Avatar src={Image} />}
                                 title={`${Name}`}
                                 description={`${Country} - ${Phone}`} />

@@ -9,7 +9,7 @@ import {Constants} from '../ComponentsImporter'
 import Cards from './Cards';
 
 
-class Employees extends React.Component {
+class Tenants extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -116,12 +116,12 @@ class Employees extends React.Component {
           ...this.getColumnSearchProps('Country'),
         },
         {
-          title: 'Job',
-          dataIndex: 'Job',
-          key: 'Job',
+          title: 'Status',
+          dataIndex: 'Status',
+          key: 'Status',
           align:'center',
           width: '12.5%',
-          ...this.getColumnSearchProps('Job'),
+          ...this.getColumnSearchProps('Status'),
         },
         {
           title: 'Phone',
@@ -142,7 +142,7 @@ class Employees extends React.Component {
         {
             title: 'Setting',
             dataIndex: 'Edit',
-            colSpan:2,
+            colSpan:3,
             key: 'Edit',
             align:'center',
             width: '1%',
@@ -155,8 +155,17 @@ class Employees extends React.Component {
             key: 'Del',
             align:'center',
             width: '1%',
-            render:  () => <Icon type="delete" />
-        }
+            render:  () => <Icon type="delete" theme="twoTone" />
+        },
+        {
+          title: 'Car',
+          dataIndex: 'Car',
+          colSpan:0,
+          key: 'Car',
+          align:'center',
+          width: '1%',
+          render:  () => <Icon type="car" theme="filled" />
+      }
       ];
     return (
         <React.Fragment>
@@ -174,7 +183,7 @@ class Employees extends React.Component {
               <Input style={styles.SInput} placeholder="Country" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input style={styles.SInput} placeholder="Job" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input style={styles.SInput} placeholder="Status" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
           </Row>
             <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
@@ -186,4 +195,4 @@ class Employees extends React.Component {
   }
 }
 
-export default Employees
+export default Tenants

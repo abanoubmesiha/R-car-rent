@@ -155,7 +155,7 @@ class Employees extends React.Component {
             key: 'Del',
             align:'center',
             width: '1%',
-            render:  () => <Icon type="delete" />
+            render:  () => <Icon type="delete" theme="twoTone" />
         }
       ];
     return (

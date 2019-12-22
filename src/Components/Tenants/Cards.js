@@ -34,14 +34,15 @@ class Cards extends React.Component {
                 {data &&
                 data.length > 0 &&
                 data.slice(this.state.minValue, this.state.maxValue).map((card)=>{
-                const {Code,Job,Image,Name,Country,Phone} = card
+                const {Code,Status,Image,Name,Country,Phone} = card
                     return (
-                    <Card className="CCC" title={`${Code} - ${Job}`}
+                    <Card className="CCC" title={`${Code} - ${Status}`}
                                     key={Code}
                                     size={'small'}
                                     style={{ margin: 5 }}
                                     actions={[<Icon type="edit" key="edit" />,
-                                                <Icon type="delete" />]}>
+                                              <Icon type="delete" theme="twoTone" />,
+                                              <Icon type="car" theme="filled" />]}>
                             <Meta avatar={<Avatar src={Image} />}
                                 title={`${Name}`}
                                 description={`${Country} - ${Phone}`} />
