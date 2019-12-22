@@ -1,7 +1,7 @@
 import React from 'react'
 import {Basics,Location,Constants} from '../ComponentsImporter'
 import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
-  } from 'antd';
+        Checkbox} from 'antd';
 
   const { Option } = Select;
   const { TextArea } = Input;
@@ -41,26 +41,61 @@ import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
 
             <Row  {...styles.Row}>
               <Col sm={24} md={12}>
+              <Form.Item style={styles.FormI} label="Currency" hasFeedback>
+                  {getFieldDecorator('Currency', {
+                    rules: [{ required: true, message: 'Please type Mobile Number!' }],
+                  })(
+                    <Select placeholder="Please select Currency">
+                      <Option value="Saudi riyal">Saudi riyal</Option>
+                      <Option value="Dollar">Dollar</Option>
+                    </Select>,
+                  )}
+                </Form.Item>
+                <Form.Item style={styles.FormI} label="Invoicing Method Status" hasFeedback>
+                  {getFieldDecorator('InvMeth', {rules: [{ required: true, message: 'Please type Method!' }],})(
+                    <Select placeholder="Please select Invoicing Method Status">
+                      <Option value="Method 1">Method 1</Option>
+                      <Option value="Method 2">Method 2</Option>
+                      <Option value="Method 3">Method 3</Option>
+                    </Select>,
+                  )}
+                </Form.Item>
+                <Form.Item wrapperCol={{ offset: 9}} 
+                style={styles.FormI} label="Send This Info To Tenant">
+                  {getFieldDecorator('SendInfo', {})(
+                          <Checkbox value="Yes">Yes</Checkbox>
+                  )}
+                </Form.Item>
                 <Form.Item style={styles.FormI} label="Notes">
                   {getFieldDecorator('Notes', {})(<TextArea rows={4} placeholder="Notes ........ " />)}
                 </Form.Item>
               </Col>
               <Col sm={24} md={12}>
-                <Form.Item style={styles.FormI} label="Job" hasFeedback>
-                  {getFieldDecorator('Job', {})(
-                    <Select placeholder="Please select Job">
-                      <Option value="Driver">Driver</Option>
-                      <Option value="Accountant">Accountant</Option>
-                      <Option value="Manager">Manager</Option>
+                <Form.Item style={styles.FormI} label="Tenant Type" hasFeedback>
+                  {getFieldDecorator('TenantType', {})(
+                    <Select placeholder="Please select Tenant Type">
+                      <Option value="Type 1">Type 1</Option>
+                      <Option value="Type 2">Type 2</Option>
+                      <Option value="Type 3">Type 3</Option>
                     </Select>,
                   )}
                 </Form.Item>
-                <Form.Item style={styles.FormI} label="Employee Status">
-                  {getFieldDecorator('radio-button')(
-                    <Radio.Group>
-                      <Radio.Button value="Emp">Employed</Radio.Button>
-                      <Radio.Button value="Unemp">Unemployed</Radio.Button>
-                    </Radio.Group>,
+                <Form.Item style={styles.FormI} label="Tenant Status" hasFeedback>
+                  {getFieldDecorator('TenantStatus', {})(
+                    <Select placeholder="Please select Tenant Status">
+                      <Option value="Status 1">Status 1</Option>
+                      <Option value="Status 2">Status 2</Option>
+                      <Option value="Status 3">Status 3</Option>
+                    </Select>,
+                  )}
+                </Form.Item>
+                <Form.Item style={styles.FormI} label="Classification" hasFeedback>
+                  {getFieldDecorator('Classification', {})(
+                    <Select placeholder="Please select Classification">
+                      <Option value="Classification 1">Classification 1</Option>
+                      <Option value="Classification 2">Classification 2</Option>
+                      <Option value="Classification 3">Classification 3</Option>
+                    </Select>,
                   )}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Upload Photo">

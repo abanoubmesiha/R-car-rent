@@ -16,12 +16,12 @@ class Basics extends React.Component {
 
       return (
       <React.Fragment>
-                <Form.Item style={styles.FormI} label="Country">
+                <Form.Item style={styles.FormI} label="Country" hasFeedback>
                   {getFieldDecorator('Country', {
                     rules: [{ required: true, message: 'Please type Country!' }],
                   })(<Input placeholder="Type Country" />)}
                 </Form.Item>
-                <Form.Item style={styles.FormI} label="City">
+                <Form.Item style={styles.FormI} label="City" hasFeedback>
                   {getFieldDecorator('City', {
                     rules: [{ required: true, message: 'Please type City!' }],
                   })(<Input placeholder="Type City" />)}
