@@ -23,7 +23,7 @@ import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
       return e && e.fileList;
     };
     render() {
-      const { getFieldDecorator } = this.props.form;
+      const { getFieldDecorator,setFieldsValue } = this.props.form;
       const {formItemLayout,styles} = Constants;
 
       return (
@@ -31,7 +31,7 @@ import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
             <Row {...styles.Row}>
               <Col sm={24} md={12}>
-                <Basics getFieldDecorator={getFieldDecorator}/>
+                <Basics setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator}/>
               </Col>
               <Col sm={24} md={12}>
                 <Location getFieldDecorator={getFieldDecorator}/>

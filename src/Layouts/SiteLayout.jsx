@@ -3,7 +3,7 @@ import { Layout, Breadcrumb } from 'antd';
 import { Route, Switch } from 'react-router-dom';
 
 import {Dashboard,Invoices,NewInv,Contracts,
-        NewCon,Clients,NewCls,Cars,NewCar,
+        NewCon,Tenants,NewTen,Cars,NewCar,
         Employees,NewEmp,PurchasesR,ContractsR,
         ClientsR,ServicesR,EmployeesR,Account,SMTP} from "../Components/ComponentsImporter";
 
@@ -28,8 +28,8 @@ class SiteLayout extends Component {
                                 <Route path="/inv/nwinv" component={NewInv}/>
                                 <Route path="/con/all" component={Contracts}/>
                                 <Route path="/con/nwcon" component={NewCon}/>
-                                <Route path="/cls/all" component={Clients}/>
-                                <Route path="/cls/nwcls" component={NewCls}/>
+                                <Route path="/cls/all" component={Tenants}/>
+                                <Route path="/cls/nwcls" component={NewTen}/>
                                 <Route path="/car/all" component={Cars}/>
                                 <Route path="/car/nwcar" component={NewCar}/>
                                 <Route path="/emp/all" component={Employees}/>

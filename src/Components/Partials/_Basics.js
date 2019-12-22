@@ -5,22 +5,18 @@ import {
     InputNumber,
     Input,
   } from 'antd';
-import {Constants} from '../ComponentsImporter'
+import {Constants,NumericInput} from '../ComponentsImporter'
 
 const { Option } = Select;
 
 class Basics extends React.Component {
     render() {
-      const { getFieldDecorator } = this.props;
+      const { getFieldDecorator,setFieldsValue } = this.props;
       const {styles}=Constants;
 
       return (
       <React.Fragment>
-                <Form.Item style={styles.FormI} label="Code"  hasFeedback>
-                  {getFieldDecorator('Code', {
-                    rules: [{ required: true, message: 'Please input Code Number!' }],
-                  })(<InputNumber placeholder="Type Code" style={styles.Input} min={0} max={999}/>)}
-                </Form.Item>
+                <NumericInput setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Code'} />
                 <Form.Item style={styles.FormI} label="Name"  hasFeedback>
                   {getFieldDecorator('Name', {
                     rules: [{ required: true, message: 'Please type Name!' }],

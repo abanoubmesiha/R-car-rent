@@ -66,13 +66,13 @@ class SiteSider extends Component {
                         <Menu.Item key="4">
                             <Link to="/con/all">
                                 <Icon type="solution" />
-                                <span>Manage Contracts</span>
+                                <span>Management</span>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="5">
                             <Link to="/con/nwcon">
                                 <Icon type="plus" />
-                                <span>Add New Contract</span>
+                                <span>Registration</span>
                             </Link>
                         </Menu.Item>
                     </SubMenu>

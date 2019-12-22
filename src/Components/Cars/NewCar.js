@@ -51,21 +51,9 @@ class CarForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     const {formItemLayout,styles}=Constants;
-    // const formItemLayout = {
-    //     labelCol: {
-    //     xs: { span: 24 },
-    //     sm: { span: 8 },
-    //     },
-    //     wrapperCol: {
-    //     xs: { span: 24 },
-    //     sm: { span: 16 },
-    //     },
-    // };
+    
     const config = {
       rules: [{ type: 'object', required: true, message: 'Please select time!' }],
-    };
-    const rangeConfig = {
-      rules: [{ type: 'array', required: true, message: 'Please select time!' }],
     };
     return (
     <React.Fragment>
@@ -99,19 +87,6 @@ class CarForm extends React.Component {
                     rules: [{ required: true, message: 'Please type Name!' }],
                   })(<Input placeholder="Type Employee Name" />)}
                 </Form.Item>
-                <Form.Item style={styles.FormI} label="Model">
-                    {getFieldDecorator('Model', {
-                        rules: [{ required: true, message: 'Please select Car Model!' }],
-                    })(
-                        <Select
-                        placeholder="Select an option"
-                        onChange={this.handleSelectChange}
-                        >
-                        <Option value="C200">C200</Option>
-                        <Option value="X7">X7</Option>
-                        </Select>,
-                    )}
-                </Form.Item>
                 <Form.Item style={styles.FormI} label="Brand">
                     {getFieldDecorator('Brand', {
                         rules: [{ required: true, message: 'Please select Car Brand!' }],
@@ -122,6 +97,19 @@ class CarForm extends React.Component {
                         >
                         <Option value="Mercedes">Mercedes</Option>
                         <Option value="BMW">BMW</Option>
+                        </Select>,
+                    )}
+                </Form.Item>
+                <Form.Item style={styles.FormI} label="Model">
+                    {getFieldDecorator('Model', {
+                        rules: [{ required: true, message: 'Please select Car Model!' }],
+                    })(
+                        <Select
+                        placeholder="Select an option"
+                        onChange={this.handleSelectChange}
+                        >
+                        <Option value="C200">C200</Option>
+                        <Option value="X7">X7</Option>
                         </Select>,
                     )}
                 </Form.Item>
