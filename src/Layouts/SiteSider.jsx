@@ -82,19 +82,19 @@ class SiteSider extends Component {
                         title={
                                 <span>
                                     <Icon type="user" />
-                                    <span>Clients</span>
+                                    <span>Tenants</span>
                                 </span>
                         }>
                         <Menu.Item key="6">
                             <Link to="/cls/all">
                                 <Icon type="user" />
-                                <span>Manage Clients</span>
+                                <span>Management</span>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="7">
                             <Link to="/cls/nwcls">
                                 <Icon type="plus" />
-                                <span>Add New Client</span>
+                                <span>Registration</span>
                             </Link>
                         </Menu.Item>
                     </SubMenu>
@@ -110,13 +110,13 @@ class SiteSider extends Component {
                         <Menu.Item key="8">
                             <Link to="/car/all">
                                 <Icon type="car" />
-                                <span>Manage Cars</span>
+                                <span>Management</span>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="9">
                             <Link to="/car/nwcar">
                                 <Icon type="plus" />
-                                <span>Add New Car</span>
+                                <span>Registration</span>
                             </Link>
                         </Menu.Item>
                     </SubMenu>
@@ -132,13 +132,13 @@ class SiteSider extends Component {
                         <Menu.Item key="10">
                             <Link to="/emp/all">
                                 <Icon type="team" />
-                                <span>Manage Employees</span>
+                                <span>Management</span>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="11">
                             <Link to="/emp/nwemp">
                                 <Icon type="plus" />
-                                <span>Add New Employee</span>
+                                <span>Registration</span>
                             </Link>
                         </Menu.Item>
                     </SubMenu>

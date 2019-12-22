@@ -6,7 +6,7 @@ import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
   const { Option } = Select;
   const { TextArea } = Input;
 
-  class EmpForm extends React.Component {
+  class TenForm extends React.Component {
     handleSubmit = e => {
       e.preventDefault();
       this.props.form.validateFields((err, values) => {
@@ -88,6 +88,6 @@ import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
     }
   }
   
-  const NewEmp = Form.create({ name: 'EmpForm' })(EmpForm);
-  export default NewEmp;
+  const NewTen = Form.create({ name: 'TenForm' })(TenForm);
+  export default NewTen;
 

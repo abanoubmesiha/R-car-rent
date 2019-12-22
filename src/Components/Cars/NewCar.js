@@ -8,7 +8,7 @@ const { MonthPicker } = DatePicker;
 const { Option } = Select;
 const { TextArea } = Input;
 
-class TimeRelatedForm extends React.Component {
+class CarForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -199,5 +199,5 @@ class TimeRelatedForm extends React.Component {
   }
 }
 
-const NewCar = Form.create({ name: 'time_related_controls' })(TimeRelatedForm);
+const NewCar = Form.create({ name: 'CarForm' })(CarForm);
 export default NewCar;
