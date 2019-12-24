@@ -37,22 +37,6 @@ class Basics extends React.Component {
                 <NumericInput id={'TenForm_IDNumber'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type ID Number'} label={'ID Number'} labelTitle={'IDNumber'} />
                 <NumericInput id={'TenForm_Phone'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Phone'} label={'Phone'} labelTitle={'Phone'} />
                 <NumericInput id={'TenForm_Mobile'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Mobile'} label={'Mobile'} labelTitle={'Mobile'} />
-
-                {/* <Form.Item style={styles.FormI} label="ID Number" hasFeedback>
-                  {getFieldDecorator('IDNum', {
-                    rules: [{ required: true, message: 'Please type Id Number!' }],
-                  })(<InputNumber placeholder="Type ID Number" style={styles.Input}  max={99999999999999} />)}
-                </Form.Item>
-                <Form.Item style={styles.FormI} label="Phone" hasFeedback>
-                  {getFieldDecorator('Phone', {
-                    rules: [{ required: true, message: 'Please type Phone Number!' }],
-                  })(<InputNumber placeholder="Type Phone" style={styles.Input} max={99999999999999} />)}
-                </Form.Item>
-                <Form.Item style={styles.FormI} label="Mobile" hasFeedback>
-                  {getFieldDecorator('Mobile', {
-                    rules: [{ required: true, message: 'Please type Mobile Number!' }],
-                  })(<InputNumber placeholder="Type Mobile" style={styles.Input} max={99999999999999}/>)}
-                </Form.Item> */}
                 <Form.Item style={styles.FormI} label="E-mail" hasFeedback>
                   {getFieldDecorator('email', {
                     rules: [

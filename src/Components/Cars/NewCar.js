@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Form,DatePicker,TimePicker,Button,Row,Col,
         Select,InputNumber,Input,Upload,Icon,} from 'antd';
-import {Constants} from '../ComponentsImporter'
+import {Constants,NumericInput} from '../ComponentsImporter'
 
 const { MonthPicker } = DatePicker;
 const { Option } = Select;
@@ -49,7 +49,7 @@ class CarForm extends React.Component {
     return e && e.fileList;
   };
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator,setFieldsValue } = this.props.form;
     const {formItemLayout,styles}=Constants;
     
     const config = {
@@ -136,9 +136,7 @@ class CarForm extends React.Component {
                 <Form.Item style={styles.FormI} label="Status">
                   {getFieldDecorator('Status', {})(<Input placeholder="Type Status" />)}
                 </Form.Item>
-                <Form.Item style={styles.FormI} label="Plate Number">
-                  {getFieldDecorator('PlateNumber', {})(<Input placeholder="Type Plate Number" />)}
-                </Form.Item>
+                <NumericInput id={'TenForm_PlateNumber'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Plate Number'} label={'Plate Number'} labelTitle={'PlateNumber'}/>
                 <Form.Item  style={styles.FormI} label="Registration Date">
                     {getFieldDecorator('ManuDate', config)( <DatePicker style={styles.Input} placeholder="Select Registration Date" />)}
                 </Form.Item>

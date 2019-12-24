@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Form,DatePicker,Icon,Button,Row,Col,
         Select,InputNumber,Input,Table,} from 'antd';
-import {Constants} from '../ComponentsImporter'
+import {Constants,NumericInput} from '../ComponentsImporter'
 
 const { RangePicker } = DatePicker;
 const { Option } = Select;
@@ -49,7 +49,7 @@ class ConForm extends React.Component {
     return e && e.fileList;
   };
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator,setFieldsValue } = this.props.form;
     const {formItemLayout,styles}=Constants;
     
     const config = {
@@ -100,11 +100,12 @@ const columns = [
       <Form {...formItemLayout} onSubmit={this.handleSubmit}>
         <Row {...styles.Row}>
               <Col sm={24} md={12}>
-                <Form.Item style={styles.FormI} label="Code">
+                {/* <Form.Item style={styles.FormI} label="Code">
                     {getFieldDecorator('Code', {
                         rules: [{ required: true, message: 'Please input Code Number!' }],
                     })(<Input style={styles.Input} placeholder="Type Code" min={0} max={999999}/>)}
-                </Form.Item>
+                </Form.Item> */}
+                <NumericInput id={'TenForm_Code'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Code Number'} label={'Code'} labelTitle={'code'}/>
                 <Form.Item  style={styles.FormI} label="Registration Date">
                     {getFieldDecorator('RegDate', config)(<DatePicker style={styles.Input} placeholder="Select Registration Date" />)}
                 </Form.Item>
@@ -168,9 +169,7 @@ const columns = [
                         </Select>,
                     )}
                 </Form.Item>
-                <Form.Item style={styles.FormI} label="Plate Number">
-                  {getFieldDecorator('PlateNumber', {})(<Input placeholder="Type Plate Number" />)}
-                </Form.Item>
+                <NumericInput id={'TenForm_PlateNumber'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Plate Number'} label={'Plate Number'} labelTitle={'PlateNumber'}/>
                 <Form.Item style={styles.FormI} label="Rent Per Day">
                     {getFieldDecorator('Rent', {
                         rules: [{ required: true, message: 'Please type Rent!' }],
