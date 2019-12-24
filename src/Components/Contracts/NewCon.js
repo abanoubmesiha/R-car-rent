@@ -24,19 +24,11 @@ class ConForm extends React.Component {
       }
       
       // Should format date value before submit.
-      const rangeValue = fieldsValue['range-picker'];
-      const rangeTimeValue = fieldsValue['range-time-picker'];
+      const rangeValue = fieldsValue['RangeDate'];
       const values = {
         ...fieldsValue,
-        'date-picker': fieldsValue['date-picker'].format('YYYY-MM-DD'),
-        'date-time-picker': fieldsValue['date-time-picker'].format('YYYY-MM-DD HH:mm:ss'),
-        'month-picker': fieldsValue['month-picker'].format('YYYY-MM'),
-        'range-picker': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
-        'range-time-picker': [
-          rangeTimeValue[0].format('YYYY-MM-DD HH:mm:ss'),
-          rangeTimeValue[1].format('YYYY-MM-DD HH:mm:ss'),
-        ],
-        'time-picker': fieldsValue['time-picker'].format('HH:mm:ss'),
+        'RegDate': fieldsValue['RegDate'].format('YYYY-MM-DD'),
+        'RangeDate': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
       };
       console.log('Received values of form: ', values);
     });
@@ -59,12 +51,13 @@ class ConForm extends React.Component {
       rules: [{ type: 'array', required: true, message: 'Please select time!' }],
     };
     const data = [];
-for (let i = 0; i < 100; i++) {
-  data.push({
-    key: i,
-    name: `Edward King ${i}`,
-    age: 32,
-    address: `London, Park Lane no. ${i}`,
+      for (let i = 1; i < 100; i++) {
+        data.push({
+          Code: i,
+          Brand: `C200 ${i}`,
+          Model: `Mercedes ${i}`,
+          PlateNumber: `B M W ${i}`,
+          Del:i
   });
 }
 const columns = [
@@ -109,9 +102,9 @@ const columns = [
                 <Form.Item  style={styles.FormI} label="Registration Date">
                     {getFieldDecorator('RegDate', config)(<DatePicker style={styles.Input} placeholder="Select Registration Date" />)}
                 </Form.Item>
-                <Form.Item style={styles.FormI} label="Tentant">
-                    {getFieldDecorator('Tentant', {
-                        rules: [{ required: true, message: 'Please select Tentant!' }],
+                <Form.Item style={styles.FormI} label="Tenant">
+                    {getFieldDecorator('Tenant', {
+                        rules: [{ required: false, message: 'Please select Tenant!' }],
                     })(
                         <Select
                         placeholder="Select an option">
@@ -182,8 +175,26 @@ const columns = [
         <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
         <Row {...styles.Row}>
             <Col sm={24} md={12}>
-                <Form.Item style={styles.FormI} label="Notes">
-                    {getFieldDecorator('Notes', {})(<TextArea rows={4} placeholder="Notes ........ " />)}
+                <Form.Item style={styles.FormI} label="Offer Price">
+                    {getFieldDecorator('OfferPrice', {
+                        rules: [{ required: true, message: 'Please select Offer Price!' }],
+                    })(
+                        <Select
+                        placeholder="Select an option">
+                        <Option value="Offer Price 1">Offer Price 1</Option>
+                        <Option value="Offer Price 2">Offer Price 2</Option>
+                        </Select>,
+                    )}
+                </Form.Item>
+                <Form.Item style={styles.FormI} label="Tax">
+                    {getFieldDecorator('Tax', {
+                        rules: [{ required: true, message: 'Please input Tax!' }],
+                    })(<Input style={styles.Input} prefix={'%'} placeholder="Type Tax" min={0} max={999999}/>)}
+                </Form.Item>
+                <Form.Item style={styles.FormI} label="Discount">
+                    {getFieldDecorator('Discount', {
+                        rules: [{ required: true, message: 'Please input Discount!' }],
+                    })(<Input style={styles.Input} prefix={'%'} placeholder="Type Discount" min={0} max={999999}/>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Description">
                     {getFieldDecorator('Description', {})(<TextArea rows={4} placeholder="Description ........ " />)}
