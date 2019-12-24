@@ -16,7 +16,7 @@ class Basics extends React.Component {
 
       return (
       <React.Fragment>
-                <NumericInput setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Code'} />
+                <NumericInput id={'TenForm_Code'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Code Number'} label={'Code'} labelTitle={'code'}/>
                 <Form.Item style={styles.FormI} label="Name"  hasFeedback>
                   {getFieldDecorator('Name', {
                     rules: [{ required: true, message: 'Please type Name!' }],
@@ -34,7 +34,11 @@ class Basics extends React.Component {
                     </Select>,
                   )}
                 </Form.Item>
-                <Form.Item style={styles.FormI} label="ID Number" hasFeedback>
+                <NumericInput id={'TenForm_IDNumber'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type ID Number'} label={'ID Number'} labelTitle={'IDNumber'} />
+                <NumericInput id={'TenForm_Phone'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Phone'} label={'Phone'} labelTitle={'Phone'} />
+                <NumericInput id={'TenForm_Mobile'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Mobile'} label={'Mobile'} labelTitle={'Mobile'} />
+
+                {/* <Form.Item style={styles.FormI} label="ID Number" hasFeedback>
                   {getFieldDecorator('IDNum', {
                     rules: [{ required: true, message: 'Please type Id Number!' }],
                   })(<InputNumber placeholder="Type ID Number" style={styles.Input}  max={99999999999999} />)}
@@ -48,7 +52,7 @@ class Basics extends React.Component {
                   {getFieldDecorator('Mobile', {
                     rules: [{ required: true, message: 'Please type Mobile Number!' }],
                   })(<InputNumber placeholder="Type Mobile" style={styles.Input} max={99999999999999}/>)}
-                </Form.Item>
+                </Form.Item> */}
                 <Form.Item style={styles.FormI} label="E-mail" hasFeedback>
                   {getFieldDecorator('email', {
                     rules: [
