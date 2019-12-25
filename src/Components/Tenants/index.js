@@ -111,12 +111,12 @@ class Tenants extends React.Component {
           ...this.getColumnSearchProps('Name'),
         },
         {
-          title: 'Country',
-          dataIndex: 'Country',
-          key: 'Country',
+          title: 'Adress',
+          dataIndex: 'Adress',
+          key: 'Adress',
           align:'center',
           width: '16%',
-          ...this.getColumnSearchProps('Country'),
+          ...this.getColumnSearchProps('Adress'),
         },
         {
           title: 'Status',
@@ -183,7 +183,7 @@ class Tenants extends React.Component {
               <Input style={styles.SInput} placeholder="Phone" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input style={styles.SInput} placeholder="Country" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input style={styles.SInput} placeholder="Adress" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
               <Input style={styles.SInput} placeholder="Status" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
