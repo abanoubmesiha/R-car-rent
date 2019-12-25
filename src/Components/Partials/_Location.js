@@ -1,7 +1,7 @@
 import React from 'react'
-import {Form,Input,Select,Icon} from 'antd';
+import {Form,Input,Select,Icon,AutoComplete} from 'antd';
 
-import {Constants} from '../ComponentsImporter'
+import {Constants,CountrySource} from '../ComponentsImporter'
 
 const { Option } = Select;
 
@@ -15,7 +15,11 @@ class Basics extends React.Component {
                 <Form.Item style={styles.FormI} label="Country" hasFeedback>
                   {getFieldDecorator('Country', {
                     rules: [{ required: true, message: 'Please type Country!' }],
-                  })(<Input prefix={<Icon type="global" />} placeholder="Type Country" />)}
+                  })(<AutoComplete  dataSource={CountrySource}  
+                                    filterOption={(inputValue, option) =>
+                                      option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}>
+                      <Input prefix={<Icon type="global" />} placeholder="Type Country" />
+                      </AutoComplete>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="City" hasFeedback>
                   {getFieldDecorator('City', {

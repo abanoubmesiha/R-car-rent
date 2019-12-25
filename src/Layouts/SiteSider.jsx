@@ -24,7 +24,7 @@ class SiteSider extends Component {
             <Sider  breakpoint="xs" collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} >
                 <div style={{
                     // width: "50px", height: "50px", 
-                    paddingTop:'10px',position: "center"}}>
+                    paddingTop:'10px',paddingLeft:'10px',position: "center"}}>
                     <img width={'180px'} height={'80px'} src={Logo} />
                 </div>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" style={{textAlign: "left"}}>
