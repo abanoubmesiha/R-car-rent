@@ -1,8 +1,8 @@
 import React from 'react'
 
 import {Form,DatePicker,Icon,Button,Row,Col,
-        Select,InputNumber,Input,Table,} from 'antd';
-import {Constants,NumericInput} from '../ComponentsImporter'
+        Select,InputNumber,Input,Table,AutoComplete} from 'antd';
+import {Constants,NumericInput,CarBrandSource} from '../ComponentsImporter'
 
 const { RangePicker } = DatePicker;
 const { Option } = Select;
@@ -139,28 +139,16 @@ const columns = [
                 <Form.Item style={styles.FormI} label="Brand">
                     {getFieldDecorator('Brand', {
                         rules: [{ required: true, message: 'Please select Car Brand!' }],
-                    })(
-                        <Select
-                        placeholder="Select an option"
-                        onChange={this.handleSelectChange}
-                        >
-                        <Option value="Mercedes">Mercedes</Option>
-                        <Option value="BMW">BMW</Option>
-                        </Select>,
-                    )}
+                    })(<AutoComplete  dataSource={CarBrandSource}  
+                      filterOption={(inputValue, option) =>
+                        option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}>
+                        <Input placeholder="Type Brand" />
+                        </AutoComplete>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Model">
                     {getFieldDecorator('Model', {
-                        rules: [{ required: true, message: 'Please select Car Model!' }],
-                    })(
-                        <Select
-                        placeholder="Select an option"
-                        onChange={this.handleSelectChange}
-                        >
-                        <Option value="C200">C200</Option>
-                        <Option value="X7">X7</Option>
-                        </Select>,
-                    )}
+                        rules: [{ required: true, message: 'Please type Car Model!' }],
+                    })(<Input style={styles.Input} placeholder="Type Car Model"/>)}
                 </Form.Item>
                 <NumericInput id={'TenForm_PlateNumber'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Plate Number'} label={'Plate Number'} labelTitle={'PlateNumber'}/>
                 <Form.Item style={styles.FormI} label="Rent Per Day">

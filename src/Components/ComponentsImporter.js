@@ -20,9 +20,11 @@ import Basics from './Partials/_Basics'
 import Location from './Partials/_Location'
 import NumericInput from './Partials/_NumericInput'
 import Constants from './ConstantsImporer'
-import CountrySource from './AutoComplete'
+import {CountrySource} from './AutoComplete'
+import {CarBrandSource} from './AutoComplete'
 
 export {Dashboard,Invoices,NewInv,Contracts,NewCon,Tenants,
         NewTen,Cars,NewCar,Employees,NewEmp,PurchasesR,
         ContractsR,ClientsR,ServicesR,EmployeesR,Account,SMTP,
-        Basics,Location,NumericInput,Constants,CountrySource}
+        Basics,Location,NumericInput,Constants,CountrySource,
+        CarBrandSource,}

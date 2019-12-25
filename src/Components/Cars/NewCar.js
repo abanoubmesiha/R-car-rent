@@ -1,8 +1,8 @@
 import React from 'react'
 
-import {Form,DatePicker,TimePicker,Button,Row,Col,
+import {Form,DatePicker,AutoComplete,Button,Row,Col,
         Select,InputNumber,Input,Upload,Icon,} from 'antd';
-import {Constants,NumericInput} from '../ComponentsImporter'
+import {Constants,NumericInput,CarBrandSource} from '../ComponentsImporter'
 
 const { MonthPicker } = DatePicker;
 const { Option } = Select;
@@ -90,15 +90,11 @@ class CarForm extends React.Component {
                 <Form.Item style={styles.FormI} label="Brand">
                     {getFieldDecorator('Brand', {
                         rules: [{ required: true, message: 'Please select Car Brand!' }],
-                    })(
-                        <Select
-                        placeholder="Select an option"
-                        onChange={this.handleSelectChange}
-                        >
-                        <Option value="Mercedes">Mercedes</Option>
-                        <Option value="BMW">BMW</Option>
-                        </Select>,
-                    )}
+                    })(<AutoComplete  dataSource={CarBrandSource}  
+                      filterOption={(inputValue, option) =>
+                        option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1}>
+                        <Input placeholder="Type Brand" />
+                        </AutoComplete>)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Model">
                     {getFieldDecorator('Model', {
