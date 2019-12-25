@@ -165,7 +165,7 @@ class Employees extends React.Component {
       ];
     return (
         <React.Fragment>
-          {/* <Row>
+          <Row className="CPanel">
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
               <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
@@ -182,10 +182,10 @@ class Employees extends React.Component {
               <Input style={styles.SInput} placeholder="Job" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
           </Row>
-            <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
-            <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/> */}
+            <Button className="CReset" style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
+            <hr className="Chr" style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
             <Cards data={this.state.data}/>
-            <Table className="TTT" pagination bordered columns={columns} dataSource={this.state.data} />
+            <Table className="CTable" pagination bordered columns={columns} dataSource={this.state.data} />
         </React.Fragment>
     )
   }

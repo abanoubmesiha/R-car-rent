@@ -36,7 +36,7 @@ class Cards extends React.Component {
                 data.slice(this.state.minValue, this.state.maxValue).map((card)=>{
                 const {Code,Name,MDate,Brand,Model,Color,Image,File,Edit,Del,Car,Tool} = card
                     return (
-                    <Card className="CCC" title={`${Code} - ${Brand} - ${Model} `}
+                    <Card className="CCard" title={`${Code} - ${Brand} - ${Model} `}
                                     key={Code}
                                     size={'small'}
                                     style={{ margin: 5 }}
@@ -50,7 +50,7 @@ class Cards extends React.Component {
                                 description={`${Color} - ${MDate}`} />
                     </Card>)
         })}
-        <Pagination className="PPP" defaultCurrent={1} defaultPageSize={9}
+        <Pagination className="CPagination" defaultCurrent={1} defaultPageSize={9}
             onChange={this.handleChange}
             total={data.length} showQuickJumper />
       </React.Fragment>

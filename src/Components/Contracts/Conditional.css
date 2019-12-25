@@ -1,20 +1,38 @@
-.TTT {
+.CTable {
     display: block;
 }
-.CCC {
+.CCard {
     display: none;
 }
-.PPP {
+.CPagination {
     display: none;
+}
+.CPanel {
+    display: none !important;
+}
+.CReset {
+    display: none !important;
+}
+.Chr {
+    display: none !important;
 }
 @media (max-width: 950px) {
-    .TTT {
+    .CTable {
         display: none;
     }
-    .CCC {
+    .CCard {
         display: block;
     }
-    .PPP {
+    .CPagination {
         display: block;
+    }
+    .CPanel {
+        display: block !important;
+    }
+    .CReset {
+        display: block !important;
+    }
+    .Chr {
+        display: block !important;
     }
   }
