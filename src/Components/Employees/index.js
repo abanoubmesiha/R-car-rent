@@ -69,16 +69,21 @@ class Employees extends React.Component {
   };
       HSearch(e){
         let {value,placeholder} = e.target;
+        console.log(value,placeholder)
         const filteredData = this.state.data.filter(( emp ) =>{
           if (placeholder == 'Phone' || placeholder == 'Code') {
             value = value.toString();
             emp[placeholder] = emp[placeholder].toString();
-          } else {
-            value = value.toLowerCase();
-            emp[placeholder] = emp[placeholder].toLowerCase();
+          } 
+          // else {
+          //   value = value.toLowerCase();
+          //   emp[placeholder] = emp[placeholder].toLowerCase();
+          // }
+          if ((emp[placeholder].includes(value.toUpperCase())) || (emp[placeholder].includes(value.toUpperCase()))){
+            return true
           }
-          return emp[placeholder].includes(value);
         })
+        console.log(filteredData)
         this.setState({
               data: filteredData
             });
@@ -160,7 +165,7 @@ class Employees extends React.Component {
       ];
     return (
         <React.Fragment>
-          <Row>
+          {/* <Row>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
               <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
@@ -178,7 +183,7 @@ class Employees extends React.Component {
             </Col>
           </Row>
             <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
-            <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
+            <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/> */}
             <Cards data={this.state.data}/>
             <Table className="TTT" pagination bordered columns={columns} dataSource={this.state.data} />
         </React.Fragment>

@@ -68,15 +68,18 @@ class Cars extends React.Component {
   };
       HSearch(e){
         let {value,placeholder} = e.target;
-        const filteredData = this.state.data.filter(( emp ) =>{
+        const filteredData = this.state.data.filter(( car ) =>{
           if (placeholder == 'Phone' || placeholder == 'Code') {
             value = value.toString();
-            emp[placeholder] = emp[placeholder].toString();
-          } else {
-            value = value.toLowerCase();
-            emp[placeholder] = emp[placeholder].toLowerCase();
+            car[placeholder] = car[placeholder].toString();
+          } 
+          // else {
+          //   value = value.toLowerCase();
+          //   car[placeholder] = car[placeholder].toLowerCase();
+          // }
+          if ((car[placeholder].includes(value.toUpperCase())) || (car[placeholder].includes(value.toUpperCase()))){
+            return true
           }
-          return emp[placeholder].includes(value);
         })
         this.setState({
               data: filteredData
@@ -194,7 +197,7 @@ class Cars extends React.Component {
       ];
     return (
         <React.Fragment>
-          <Row>
+          {/* <Row>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 6 }} >
               <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
@@ -207,9 +210,9 @@ class Cars extends React.Component {
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 6 }}  >
               <Input style={styles.SInput} placeholder="Color" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
-          </Row>
-            <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
-            <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
+          </Row> */}
+            {/* <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button> */}
+            {/* <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/> */}
             <Cards data={this.state.data}/>
             <Table className="TTT" pagination bordered columns={columns} dataSource={this.state.data} />
         </React.Fragment>

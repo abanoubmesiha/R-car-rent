@@ -1,13 +1,14 @@
 
 import React from 'react'
 
-import { Table, Input, Button, Icon,Row,Col } from 'antd';
+import { Table, Input, Button, Icon,Row,Col,DatePicker } from 'antd';
 import Highlighter from 'react-highlight-words';
 import './Conditional.css'
 import data from './data';
 import {Constants} from '../ComponentsImporter'
 import Cards from './Cards';
 
+const {RangePicker} = DatePicker
 
 class Contracts extends React.Component {
   constructor(props){
@@ -68,16 +69,21 @@ class Contracts extends React.Component {
     this.setState({ searchText: '' });
   };
       HSearch(e){
+        console.log(e.target)
         let {value,placeholder} = e.target;
-        const filteredData = this.state.data.filter(( emp ) =>{
+        const filteredData = this.state.data.filter(( con ) =>{
           if (placeholder == 'Phone' || placeholder == 'Code') {
             value = value.toString();
-            emp[placeholder] = emp[placeholder].toString();
-          } else {
-            value = value.toLowerCase();
-            emp[placeholder] = emp[placeholder].toLowerCase();
+            con[placeholder] = con[placeholder].toString();
+           } 
+          //  else {
+          //   value = value.toLowerCase();
+          //   con[placeholder] = con[placeholder].toLowerCase();
+          // }
+          if ((con[placeholder].includes(value.toUpperCase())) || (con[placeholder].includes(value.toUpperCase()))){
+            return true
           }
-          return emp[placeholder].includes(value);
+
         })
         this.setState({
               data: filteredData
@@ -88,6 +94,22 @@ class Contracts extends React.Component {
               data: data
             });
       }
+      HRangePicker = (obj,arr) => {
+        function between(con, begin, end) {
+          return con >= begin && con <= end;
+        }
+        const filteredData = this.state.data.filter(( con ) =>{
+          let BeginDMY = arr[0].split('/');
+          let EndDMY = arr[1].split('/');
+          let conDMY = con['Date'].split('/');
+          if ((between(conDMY[0], BeginDMY[0], EndDMY[0])) && (between(conDMY[1], BeginDMY[1], EndDMY[1]))&&(between(conDMY[2], BeginDMY[2], EndDMY[2]))) {
+            return true
+          } else return false
+        })
+        this.setState({
+          data: filteredData
+        });
+    }
   render() {
     const {styles} = Constants;
     const columns = [
@@ -100,28 +122,28 @@ class Contracts extends React.Component {
           ...this.getColumnSearchProps('Code'),
         },
         {
-          title: 'Name',
-          dataIndex: 'Name',
-          key: 'Name',
+          title: 'Tenant',
+          dataIndex: 'Tenant',
+          key: 'Tenant',
           align:'center',
           width: '12.5%',
-          ...this.getColumnSearchProps('Name'),
+          ...this.getColumnSearchProps('Tenant'),
         },
         {
-          title: 'Country',
-          dataIndex: 'Country',
-          key: 'Country',
+          title: 'Date',
+          dataIndex: 'Date',
+          key: 'Date',
           align:'center',
           width: '16%',
-          ...this.getColumnSearchProps('Country'),
+          ...this.getColumnSearchProps('Date'),
         },
         {
-          title: 'Job',
-          dataIndex: 'Job',
-          key: 'Job',
+          title: 'Driver',
+          dataIndex: 'Driver',
+          key: 'Driver',
           align:'center',
           width: '12.5%',
-          ...this.getColumnSearchProps('Job'),
+          ...this.getColumnSearchProps('Driver'),
         },
         {
           title: 'Phone',
@@ -160,15 +182,18 @@ class Contracts extends React.Component {
       ];
     return (
         <React.Fragment>
-          <Row>
+          {/* <Row>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
               <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+            </Col>
+            <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
+              <RangePicker style={{ width: '100%',padding: '5px' }} onChange={this.HRangePicker.bind(this)} format={"DD/MM/YYYY"}/>
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
               <Input style={styles.SInput} placeholder="Name" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
-              <Input style={styles.SInput} placeholder="Phone" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
+              <Input style={styles.SInput} placeholder="Driver" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
             </Col>
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }}  >
               <Input style={styles.SInput} placeholder="Country" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />
@@ -178,7 +203,7 @@ class Contracts extends React.Component {
             </Col>
           </Row>
             <Button style={{margin:'5px'}} onClick={this.HReset}>Reset</Button>
-            <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/>
+            <hr style={{ borderRadius: '5px',border: '1px solid #1890ff'}}/> */}
             <Cards data={this.state.data}/>
             <Table className="TTT" pagination bordered columns={columns} dataSource={this.state.data} />
         </React.Fragment>

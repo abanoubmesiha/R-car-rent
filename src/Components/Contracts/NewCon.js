@@ -27,8 +27,8 @@ class ConForm extends React.Component {
       const rangeValue = fieldsValue['RangeDate'];
       const values = {
         ...fieldsValue,
-        'RegDate': fieldsValue['RegDate'].format('YYYY-MM-DD'),
-        'RangeDate': [rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
+        'RegDate': fieldsValue['RegDate'].format('DD-MM-YYYY'),
+        'RangeDate': [rangeValue[0].format('DD-MM-YYYY'), rangeValue[1].format('DD-MM-YYYY')],
       };
       console.log('Received values of form: ', values);
     });
