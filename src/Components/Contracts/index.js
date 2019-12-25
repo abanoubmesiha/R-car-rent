@@ -72,7 +72,7 @@ class Contracts extends React.Component {
         console.log(e.target)
         let {value,placeholder} = e.target;
         const filteredData = this.state.data.filter(( con ) =>{
-          if (placeholder == 'Phone' || placeholder == 'Code') {
+          if (placeholder == 'Price' || placeholder == 'Code') {
             value = value.toString();
             con[placeholder] = con[placeholder].toString();
            } 
@@ -146,20 +146,12 @@ class Contracts extends React.Component {
           ...this.getColumnSearchProps('Driver'),
         },
         {
-          title: 'Phone',
-          dataIndex: 'Phone',
-          key: 'Phone',
+          title: 'Price',
+          dataIndex: 'Price',
+          key: 'Price',
           align:'center',
           width: '14.5%',
-          ...this.getColumnSearchProps('Phone'),
-        },
-        {
-          title: 'Image',
-          dataIndex: 'Image',
-          key: 'Image',
-          align:'center',
-          width: '7.5%',
-          render:  (url) => <img width={50} height={50} src={url} />
+          ...this.getColumnSearchProps('Price'),
         },
         {
             title: 'Setting',
