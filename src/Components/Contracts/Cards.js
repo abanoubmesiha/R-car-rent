@@ -30,9 +30,7 @@ class Cards extends React.Component {
         const {data} = this.props
         return (
           <React.Fragment>
-            
-                {data &&
-                data.length > 0 &&
+                {data && data.length > 0 &&
                 data.slice(this.state.minValue, this.state.maxValue).map((card)=>{
                 const {Code,Tenant,Price,Driver,Date} = card
                     return (
@@ -42,13 +40,11 @@ class Cards extends React.Component {
                                     style={{ margin: 5 }}
                                     actions={[<Icon type="edit" key="edit" />,
                                               <Icon type="delete" theme="twoTone" />]}>
-                            <Meta title={`${Tenant}`}
-                                description={`${Driver} - ${Date}`} />
+                            <Meta title={`${Tenant}`} description={`${Driver} - ${Date}`} />
                     </Card>)
         })}
         <Pagination className="CPagination" defaultCurrent={1} defaultPageSize={9}
-            onChange={this.handleChange}
-            total={data.length} showQuickJumper />
+            onChange={this.handleChange} total={data.length} showQuickJumper />
       </React.Fragment>
     );
   }
