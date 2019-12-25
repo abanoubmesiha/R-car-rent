@@ -28,7 +28,9 @@ class SiteLayout extends Component {
                             <Breadcrumb.Item>User</Breadcrumb.Item>
                             <Breadcrumb.Item>Bill</Breadcrumb.Item>
                         </Breadcrumb>
-                        <div style={{ background: '#fff',padding: '10px 10px',borderRadius: '5px',border: '2px solid #1890ff'}}>
+                        <div style={{ background: '#fff',padding: '10px 10px',borderRadius: '5px',
+                                    // border: '2px solid #1890ff'
+                                        }}>
                             <Switch>
                                 <Route path="/dash" component={Dashboard}/>
                                 <Route path="/inv/all" component={Invoices}/>

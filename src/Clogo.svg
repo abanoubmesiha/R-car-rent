@@ -1,0 +1,14 @@
+<svg width="527" height="118" xmlns="http://www.w3.org/2000/svg" style="vector-effect: non-scaling-stroke;" stroke="null">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g stroke="null">
+  <title stroke="null">background</title>
+  <rect stroke="null" fill="none" id="canvas_background" height="120" width="529" y="-1" x="-1"/>
+  <g style="vector-effect: non-scaling-stroke;" stroke="null" display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect stroke="null" fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <text stroke="#000" font-weight="bold" transform="matrix(4.0068206755596565,0,0,6.757556139350332,-606.9360487229475,-1453.3048619256317) " xml:space="preserve" text-anchor="start" font-family="'Courier New', Courier, monospace" font-size="24" id="svg_2" y="231.019724" x="152.397044" stroke-width="0" fill="#00ddff">Track Car</text>
+ </g>
+</svg>
