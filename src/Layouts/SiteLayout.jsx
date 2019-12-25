@@ -19,7 +19,8 @@ class SiteLayout extends Component {
                         <Menu theme="dark" mode="horizontal"
                             defaultSelectedKeys={['2']} style={{ lineHeight: '64px' }}>
                             <Menu.Item key="1">Admin</Menu.Item>
-                            <Menu.Item key="2">Control Panel</Menu.Item>
+                            <Menu.Item key="2">Admin 2</Menu.Item>
+                            <Menu.Item key="3">Admin 3</Menu.Item>
                         </Menu>
                     </Header>
                     <Content style={{ margin: '0 16px' }}>

@@ -34,7 +34,7 @@ class Cards extends React.Component {
                 {data &&
                 data.length > 0 &&
                 data.slice(this.state.minValue, this.state.maxValue).map((card)=>{
-                const {Code,Job,Image,Name,Country,Phone} = card
+                const {Code,Job,Image,Name,Adress,Phone} = card
                     return (
                     <Card className="CCard" title={`${Code} - ${Job}`}
                                     key={Code}
@@ -44,7 +44,7 @@ class Cards extends React.Component {
                                                 <Icon type="delete" theme="twoTone" />]}>
                             <Meta avatar={<Avatar src={Image} />}
                                 title={`${Name}`}
-                                description={`${Country} - ${Phone}`} />
+                                description={`${Adress} - ${Phone}`} />
                     </Card>)
         })}
         <Pagination className="CPagination" defaultCurrent={1} defaultPageSize={9}
