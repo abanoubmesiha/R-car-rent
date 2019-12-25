@@ -1,7 +1,7 @@
 const data = [
     {
       Code: '1',
-      Name: 'Lavone Parra',
+      Name: 'Mohammed Saleh',
       Phone: '01101401234',
       Adress: '6th Floor, Khobar Gate Tower King Fahad Road Al khobar KSA',
       Job:'Driver',
@@ -11,7 +11,7 @@ const data = [
     },
     {
       Code: '2',
-      Name: 'Rosita Dejohn',
+      Name: 'Bassam Mohammed',
       Phone: '01155201234',
       Adress: 'Nakheel , Pr. Turkey Al-AWOL Road,ITCC , RD-01 Building, 4th floor,PO Box 19319, Riyadh  11435',
       Job:'Driver',
@@ -21,7 +21,7 @@ const data = [
     },
     {
       Code: '3',
-      Name: 'Merrill Mayor',
+      Name: 'Abdu Nasser',
       Phone: '01101606234',
       Adress: 'King Fahad Road. Riyadh 11533',
       Job:'Driver',
@@ -31,7 +31,7 @@ const data = [
     },
     {
       Code: '4',
-      Name: 'Kraig Ayres',
+      Name: 'Hamza Ossama',
       Phone: '01661201234',
       Adress: '6th Floor, Khobar Gate Tower King Fahad Road Al khobar KSA',
       Job:'Driver',
@@ -41,7 +41,7 @@ const data = [
     },
     {
       Code: '5',
-      Name: 'Bulah Cunha',
+      Name: 'Yahya Ammar',
       Phone: '01101201994',
       Adress: 'Jameel Square Cross Road andalus street and Tahlya Office number 705 Jeddah',
       Job:'Driver',
@@ -51,7 +51,7 @@ const data = [
     },
     {
       Code: '6',
-      Name: 'Chadwick Aday',
+      Name: 'Arafat Ahmed',
       Phone: '01101288234',
       Adress: 'Makkah Al-Mukaramah Street P.O. Box 2526',
       Job:'Driver',
@@ -61,7 +61,7 @@ const data = [
     },
     {
       Code: '7',
-      Name: 'Lucy Arehart',
+      Name: 'Yaser Omar',
       Phone: '0110177234',
       Adress: 'Jameel Square Cross Road andalus street and Tahlya Office number 705 Jeddah',
       Job:'Driver',
@@ -71,7 +71,7 @@ const data = [
     },
     {
       Code: '8',
-      Name: 'Fidelia Harpin',
+      Name: 'Abdullah Khaled',
       Phone: '01551201234',
       Adress: 'Jameel Square Cross Road andalus street and Tahlya Office number 705 Jeddah',
       Job:'ِAccountant',
@@ -81,7 +81,7 @@ const data = [
     },
     {
       Code: '9',
-      Name: 'Alaina Brim',
+      Name: 'Kadi Rashed',
       Phone: '01122201234',
       Adress: 'Makkah Al-Mukaramah Street P.O. Box 2526',
       Job:'ِAccountant',
@@ -91,7 +91,7 @@ const data = [
     },
     {
       Code: '10',
-      Name: 'Torie Showman',
+      Name: 'Khaled Ali',
       Phone: '0110111234',
       Adress: 'Nakheel , Pr. Turkey Al-AWOL Road,ITCC , RD-01 Building, 4th floor,PO Box 19319, Riyadh  11435',
       Job:'ِAccountant',
@@ -101,7 +101,7 @@ const data = [
     },
     {
       Code: '11',
-      Name: 'Rayna Suazo',
+      Name: 'Asaad Saad',
       Phone: '01101691234',
       Adress: 'King Fahad Road. Riyadh 11533',
       Job:'ِAccountant',
@@ -111,7 +111,7 @@ const data = [
     },
     {
       Code: '12',
-      Name: 'Evangeline Murrin',
+      Name: 'Abdourahman Momtaz',
       Phone: '01101651234',
       Adress: '6th Floor, Khobar Gate Tower King Fahad Road Al khobar KSA',
       Job:'ِAccountant',
@@ -121,7 +121,7 @@ const data = [
     },
     {
       Code: '13',
-      Name: 'Hyacinth Hanson',
+      Name: 'Mustafa Kazem',
       Phone: '01101541234',
       Adress: 'King Fahad Road. Riyadh 11533',
       Job:'ِAccountant',
