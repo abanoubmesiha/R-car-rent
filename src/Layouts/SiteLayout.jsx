@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Layout, Breadcrumb } from 'antd';
+import { Layout,Menu, Breadcrumb } from 'antd';
 import { Route, Switch } from 'react-router-dom';
 
 import {Dashboard,Invoices,NewInv,Contracts,
@@ -15,7 +15,13 @@ class SiteLayout extends Component {
     render() {
         return (
                 <Layout className={Layout}>
-                    <Header style={{ background: '#fff45', padding: 0 }} />
+                    <Header style={{ background: '#fff45', padding: 0 }}>
+                        <Menu theme="dark" mode="horizontal"
+                            defaultSelectedKeys={['2']} style={{ lineHeight: '64px' }}>
+                            <Menu.Item key="1">Admin</Menu.Item>
+                            <Menu.Item key="2">Control Panel</Menu.Item>
+                        </Menu>
+                    </Header>
                     <Content style={{ margin: '0 16px' }}>
                         <Breadcrumb style={{ margin: '16px 0', textAlign: "left" }}>
                             <Breadcrumb.Item>User</Breadcrumb.Item>

@@ -3,7 +3,7 @@ import {
     Form,
     Select,
     InputNumber,
-    Input,
+    Input,Icon
   } from 'antd';
 import {Constants,NumericInput} from '../ComponentsImporter'
 
@@ -20,7 +20,7 @@ class Basics extends React.Component {
                 <Form.Item style={styles.FormI} label="Name"  hasFeedback>
                   {getFieldDecorator('Name', {
                     rules: [{ required: true, message: 'Please type Name!' }],
-                  })(<Input placeholder="Type Name" />)}
+                  })(<Input prefix={<Icon type="user" />}  placeholder="Type Name" />)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="ID Type" hasFeedback>
                   {getFieldDecorator('IDType', {
@@ -35,8 +35,8 @@ class Basics extends React.Component {
                   )}
                 </Form.Item>
                 <NumericInput id={'TenForm_IDNumber'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type ID Number'} label={'ID Number'} labelTitle={'IDNumber'} />
-                <NumericInput id={'TenForm_Phone'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Phone'} label={'Phone'} labelTitle={'Phone'} />
-                <NumericInput id={'TenForm_Mobile'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Mobile'} label={'Mobile'} labelTitle={'Mobile'} />
+                <NumericInput prefix={<Icon type="phone" />} id={'TenForm_Phone'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Phone'} label={'Phone'} labelTitle={'Phone'} />
+                <NumericInput prefix={<Icon type="mobile" />} id={'TenForm_Mobile'} setFieldsValue={setFieldsValue} getFieldDecorator={getFieldDecorator} placeholder={'Type Mobile'} label={'Mobile'} labelTitle={'Mobile'} />
                 <Form.Item style={styles.FormI} label="E-mail" hasFeedback>
                   {getFieldDecorator('email', {
                     rules: [
@@ -49,7 +49,7 @@ class Basics extends React.Component {
                         message: 'Please input your E-mail!',
                       },
                     ],
-                  })(<Input placeholder="Type E-Mail" />)}
+                  })(<Input placeholder="Type E-Mail" prefix={<Icon type="mail" />} />)}
                 </Form.Item>
       </React.Fragment>
         );

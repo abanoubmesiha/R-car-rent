@@ -30,9 +30,8 @@ class NumericInput extends React.Component {
         <Form.Item style={styles.FormI} label={`${this.props.label}`}  hasFeedback>
           {getFieldDecorator(`${this.props.labelTitle}`, {
             rules: [{ required: true, message: `Please, ${this.props.placeholder}` }],
-          })(<Input onBlur={this.onBlur}
-            value={this.state.value} 
-            onChange={this.onChange}
+          })(<Input onBlur={this.onBlur} value={this.state.value} 
+            onChange={this.onChange} prefix={this.props.prefix}
             placeholder={this.props.placeholder} maxLength={15}/>)}
         </Form.Item>
       </React.Fragment>

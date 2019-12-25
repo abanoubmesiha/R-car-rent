@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-    Form,
-    Input,
-    Select,
-  } from 'antd';
+import {Form,Input,Select,Icon} from 'antd';
 
 import {Constants} from '../ComponentsImporter'
 
@@ -19,12 +15,12 @@ class Basics extends React.Component {
                 <Form.Item style={styles.FormI} label="Country" hasFeedback>
                   {getFieldDecorator('Country', {
                     rules: [{ required: true, message: 'Please type Country!' }],
-                  })(<Input placeholder="Type Country" />)}
+                  })(<Input prefix={<Icon type="global" />} placeholder="Type Country" />)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="City" hasFeedback>
                   {getFieldDecorator('City', {
                     rules: [{ required: true, message: 'Please type City!' }],
-                  })(<Input placeholder="Type City" />)}
+                  })(<Input prefix={<Icon type="home" />} placeholder="Type City" />)}
                 </Form.Item>
                 <Form.Item style={styles.FormI} label="Region">
                   {getFieldDecorator('Region', {})(<Input placeholder="Type Region" />)}
