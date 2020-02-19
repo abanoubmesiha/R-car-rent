@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-import { Table, Input, Button, Icon,Row,Col } from 'antd';
+import { Table, Input, Button, Icon,Row,Col,Alert } from 'antd';
 import Highlighter from 'react-highlight-words';
 import './Conditional.css'
 import data from './data';
@@ -172,6 +172,13 @@ class Tenants extends React.Component {
       ];
     return (
         <React.Fragment>
+          <Alert
+      message="Informational Notes"
+      description="A full list of all tenants."
+      type="info"
+      showIcon closable
+      style={{marginBottom:'5px'}}
+    />
           <Row className="CPanel">
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
               <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />

@@ -7,6 +7,7 @@ import './Conditional.css'
 import data from './data';
 import {Constants} from '../ComponentsImporter'
 import Cards from './Cards';
+import { Alert } from 'antd';
 
 
 class Employees extends React.Component {
@@ -165,6 +166,13 @@ class Employees extends React.Component {
       ];
     return (
         <React.Fragment>
+             <Alert
+      message="Informational Notes"
+      description="A full list of employees."
+      type="info"
+      showIcon closable
+      style={{marginBottom:'5px'}}
+    />
           <Row className="CPanel">
             <Col xs={{ span: 24}} md={{ span: 12 }} lg={{ span: 8 }} >
               <Input style={styles.SInput} placeholder="Code" suffix={<Icon type="search"/>} onPressEnter={this.HSearch.bind(this)} />

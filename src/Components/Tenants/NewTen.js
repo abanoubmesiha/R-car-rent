@@ -1,7 +1,7 @@
 import React from 'react'
 import {Basics,Location,Constants} from '../ComponentsImporter'
 import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
-        Checkbox} from 'antd';
+        Checkbox,Alert} from 'antd';
 
   const { Option } = Select;
   const { TextArea } = Input;
@@ -28,6 +28,13 @@ import {Form,Select,Radio,Input,Button,Upload,Icon,Row,Col,
 
       return (
       <React.Fragment>
+         <Alert
+      message="Informational Notes"
+      description="Create a new tenant."
+      type="info"
+      showIcon closable
+      style={{marginBottom:'5px'}}
+    />
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
             <Row {...styles.Row}>
               <Col sm={24} md={12}>

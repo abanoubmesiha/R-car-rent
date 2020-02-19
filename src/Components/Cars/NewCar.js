@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {Form,DatePicker,AutoComplete,Button,Row,Col,
-        Select,InputNumber,Input,Upload,Icon,} from 'antd';
+        Select,InputNumber,Input,Upload,Icon,Alert} from 'antd';
 import {Constants,NumericInput,CarBrandSource} from '../ComponentsImporter'
 
 const { MonthPicker } = DatePicker;
@@ -57,6 +57,13 @@ class CarForm extends React.Component {
     };
     return (
     <React.Fragment>
+      <Alert
+      message="Informational Notes"
+      description="Registrate a new car."
+      type="info"
+      showIcon closable
+      style={{marginBottom:'5px'}}
+    />
       <Form {...formItemLayout} onSubmit={this.handleSubmit}>
         <Row {...styles.Row}>
             <Col sm={24} md={{span:12, offset:6}}>
